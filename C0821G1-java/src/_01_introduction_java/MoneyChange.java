@@ -2,7 +2,7 @@ package _01_introduction_java;
 
 import java.util.Scanner;
 
-public class change_money {
+public class MoneyChange {
     public static void main(String[] args) {
         double rate = 23000;
         double usd;
