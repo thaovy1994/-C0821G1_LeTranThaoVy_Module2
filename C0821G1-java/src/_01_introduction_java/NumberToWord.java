@@ -2,7 +2,7 @@ package _01_introduction_java;
 
 import java.util.Scanner;
 
-public class AskNumber {
+public class NumberToWord {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter integers need to read: ");
