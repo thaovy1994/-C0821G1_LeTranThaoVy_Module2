@@ -4,26 +4,25 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        int n;
         Scanner scanner = new Scanner(System.in);
 
         //Độ dài mảng
         //nếu N < 0 thi nhập lại
-        int N;
         do {
             System.out.print("Enter the size N: ");
-            N = scanner.nextInt();
-        } while (N < 0);
+            n = scanner.nextInt();
+        } while (n < 0);
 
         //Khai báo và nhập giá trị các phần tử trong mảng
-        int[] array = new int[N];
-        for (int i = 0; i < array.length; i++) {
+        int[] array = new int[n];
+        for (int i = 0; i < n; i++) {
             System.out.print("Enter index " + i + ": ");
             array[i] = scanner.nextInt();
         }
-
         //hiển thị mảng ban đầu
-        System.out.println("\nMảng ban đầu: ");
-        for (int i = 0; i < N; i++) {
+        System.out.println("\nArray at fist: ");
+        for (int i = 0; i < n; i++) {
             System.out.print(array[i] + "\t");
         }
 
@@ -33,7 +32,7 @@ public class Main {
 
         //Tìm X xem có xuất hiện trong mảng không. Nếu xuất hiện chỉ ra vị trí của X.
         boolean check = false;
-        for (int i = 0; i < array.length - 1; i++) {
+        for (int i = 0; i < n - 1; i++) {
             if (x == array[i]) {
                 check = true;
                 System.out.println(x + " at index " + i);
@@ -46,17 +45,17 @@ public class Main {
         //Thực hiện xoá phần tử X khỏi mảng
         //Gán phần tử ở vị trí index cho phần tử ở vị trí index + 1
         int i, c;
-        for (c = i = 0; i < N; i++) {
+        for (c = i = 0; i < n; i++) {
             if (array[i] != x) {
                 array[c] = array[i];
                 c++;
             }
         }
-        N = c;
+        n = c;
 
         //In ra mảng đã xóa,
         System.out.println("array which is removed " + x + " is: ");
-        for (i = 0; i < N; i++) {
+        for (i = 0; i < n; i++) {
             System.out.print(array[i] + "\t");
         }
     }

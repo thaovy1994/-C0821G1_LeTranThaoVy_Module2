@@ -4,12 +4,12 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter numbers of integers need to print: "); //số lượng số nguyên tố cần in ra.
-        int numbers = scanner.nextInt();
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.println("Enter numbers of integers need to print: "); //số lượng số nguyên tố cần in ra.
+//        int numbers = scanner.nextInt();
         int count = 0;
         int n = 2;
-        while (count < numbers) {
+        while (count < 20) {
             if (isPrimeNumber(n)) {
                 System.out.print(n + " ");
                 count++;
@@ -24,7 +24,7 @@ public class Main {
 //            return false;
 //        }
         // check so nguyen to khi n >= 2
-        boolean check = true;
+//        boolean check = true;
         for (int i = 2; i <= Math.sqrt(n); i++) {
             if (n % i == 0) {
                 return false;

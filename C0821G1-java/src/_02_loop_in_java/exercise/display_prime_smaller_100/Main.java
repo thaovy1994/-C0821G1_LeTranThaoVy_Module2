@@ -12,11 +12,11 @@ public class Main {
 
     public static boolean isPrimeNumber(int n) {
         // so nguyen n < 2 khong phai la so nguyen to
-        if (n < 2) {
-            return false;
-        }
-        // check so nguyen to khi n >= 2
-        boolean check = true;
+//        if (n < 2) {
+//            return false;
+//        }
+        //check so nguyen to khi n >= 2
+        //boolean check = true; -> nếu dùng thì check đk if phai có break;
         for (int i = 2; i <= Math.sqrt(n); i++) {
             if (n % i == 0) {
                 return false;
