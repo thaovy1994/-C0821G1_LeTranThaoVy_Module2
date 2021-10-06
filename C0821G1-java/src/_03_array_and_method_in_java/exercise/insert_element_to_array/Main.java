@@ -37,15 +37,16 @@ public class Main {
     }
 
     static void add(int[] array, int x, int index) {
-        if (array[index] <= -1 && array[index] >= array.length - 1) {
+        if (index <= -1 || index >= array.length - 1) {
             System.out.println("can not insert");
         } else {
-            for (int i = index; i > 0; i--) {
-                array[i + 1] = array[i];
-                //problem: bị mất array[i]
-                array[index] = x;
+            for (int i = array.length - 1; i > index; i--) { //duyệt ngược length-1 về index
+                array[i] = array[i - 1];
             }
+            array[index] = x;
         }
+        //nếu ko dùng method display thì dùng lớp tiện ích Arrays.toSring(array) để in mảng mà ko cần duyệt
+        //System.out.println(Arrays.toString(array));
         displayArray(array);
     }
 
