@@ -1,10 +1,7 @@
 package _04_class_and_object_in_java.exercise;
 
 public class QuadraticEquation {
-    private static int delta;
-
     public static void main(String[] args) {
-        //Nhập vào 3 giá trị cho a, b, c và hiển thị kết quả dựa trên việc tính delta.
         QuadraticEquation equation = new QuadraticEquation();
         equation.getDiscriminant();
         equation.setA(1);
@@ -26,11 +23,11 @@ public class QuadraticEquation {
     public QuadraticEquation() {
     }
 
-    public QuadraticEquation(double a, double b, double c) {
-        this.a = a;
-        this.b = b;
-        this.c = c;
-    }
+//    public QuadraticEquation(double a, double b, double c) {
+//        this.a = a;
+//        this.b = b;
+//        this.c = c;
+//    }
 
     public double getA() {
         return this.a;
@@ -68,5 +65,4 @@ public class QuadraticEquation {
     public double getRoot2() {
         return (-b - Math.pow(b * b - 4 * a * c, 0.5) / 2 * a);
     }
-
 }

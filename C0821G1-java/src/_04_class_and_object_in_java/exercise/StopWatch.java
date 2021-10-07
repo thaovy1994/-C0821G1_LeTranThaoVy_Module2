@@ -9,7 +9,16 @@ public class StopWatch {
 
     public StopWatch() {
         this.startTime = new Date();
+//        this.endTime = new Date();
         //System.out.println(this.startTime);
+    }
+
+    public Date getStartTime() {
+        return this.startTime;
+    }
+
+    public Date getEndTime() {
+        return this.endTime;
     }
 
     public void start() {

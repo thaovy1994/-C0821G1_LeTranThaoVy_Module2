@@ -2,13 +2,14 @@ package _04_class_and_object_in_java.exercise;
 
 public class Fan {
     public static void main(String[] args) {
-        Fan fan1 = new Fan(Fan.FAST, true, 10, "yellow");//gọi đối tượng thông qua từ khóa new
+        Fan fan1 = new Fan(Fan.FAST, true, 10, "yellow");
         System.out.println("fan1: " + fan1);
 
         Fan fan2 = new Fan();
-        fan2.setOn(false);
+        fan2.setSpeed(Fan.MEDIUM);
         fan2.setRadius(5);
         fan2.setColor("Blue");
+        fan2.setOn(false);
         System.out.println("fan2: " + fan2);
     }
 
@@ -31,7 +32,7 @@ public class Fan {
     }
 
     public int getSpeed() {
-        return speed;
+        return this.speed;
     }
 
     public void setSpeed(int speed) {
