@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args) {
         Account acc1 = new Account(123, "mina", 50);
         Account acc2 = new Account(321, "may", 50);
-        acc1.outputMoney(30.0);
+        acc1.outputMoney(60.0);
         acc2.inputMoney(200.0);
 
         System.out.println(acc1);
