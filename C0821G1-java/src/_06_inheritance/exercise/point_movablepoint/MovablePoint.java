@@ -11,6 +11,7 @@ public class MovablePoint extends Point {
     }
 
     public MovablePoint(float xSpeed, float ySpeed) {
+        super(); //vì constructor ko kế thừa, nên muốn kích hoạt tọa độ x, y t phải ...
         this.xSpeed = xSpeed;
         this.ySpeed = ySpeed;
     }

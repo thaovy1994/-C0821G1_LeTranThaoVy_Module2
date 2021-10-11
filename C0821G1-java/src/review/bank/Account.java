@@ -4,9 +4,7 @@ public class Account {
     private long accountNumber;
     private String accountName;
     private double ownMoney;
-    private double moneyInput;
-    private double moneyOutput;
-    //    private double moneyOutputFee;
+    //        private double moneyOutputFee = 1;
     private static final double RATE = 0.035;
 
     public Account() {
@@ -17,14 +15,6 @@ public class Account {
         this.accountNumber = accountNumber;
         this.accountName = accountName;
         this.ownMoney = 50;
-    }
-
-    public Account(long accountNumber, String accountName, double ownMoney, double moneyInput, double moneyOutput) {
-        this.accountNumber = accountNumber;
-        this.accountName = accountName;
-        this.ownMoney = ownMoney;
-        this.moneyInput = moneyInput;
-        this.moneyOutput = moneyOutput;
     }
 
     public long getAccountNumber() {
@@ -63,7 +53,7 @@ public class Account {
         if (moneyOutput > this.getOwnMoney()) {
             System.out.println("Invalid");
         } else {
-            this.setOwnMoney(this.getOwnMoney() - moneyOutput);
+            this.setOwnMoney(this.getOwnMoney() - moneyOutput - 1);
         }
         return this.getOwnMoney();
     }
@@ -77,7 +67,7 @@ public class Account {
                 + this.getAccountNumber() +
                 "\n Account Name: "
                 + this.getAccountName() +
-                "Money in Account before: 50" +
+                "\n Money in Account before: 50" +
                 "\n Money in Account after withdrawing/deposit: "
                 + this.getOwnMoney();
     }
