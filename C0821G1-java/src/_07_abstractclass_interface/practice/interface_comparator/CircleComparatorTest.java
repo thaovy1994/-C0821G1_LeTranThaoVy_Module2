@@ -1,8 +1,6 @@
 package _07_abstractclass_interface.practice.interface_comparator;
 
-import _07_abstractclass_interface.practice.interface_comparable.Circle;
-
-import java.util.Arrays;
+import _07_abstractclass_interface.practice.interface_comparator.geometric.Circle;
 
 public class CircleComparatorTest {
     public static void main(String[] args) {

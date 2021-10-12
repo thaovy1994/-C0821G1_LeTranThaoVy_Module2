@@ -1,6 +1,6 @@
 package _07_abstractclass_interface.practice.interface_comparator;
 
-import _07_abstractclass_interface.practice.interface_comparable.Circle;
+import _07_abstractclass_interface.practice.interface_comparator.geometric.Circle;
 
 public class CircleComparator implements Comparator {
     @Override

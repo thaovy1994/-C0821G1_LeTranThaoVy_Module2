@@ -1,5 +1,7 @@
 package _07_abstractclass_interface.practice.interface_comparable;
 
+import _07_abstractclass_interface.practice.interface_comparable.geometric.Circle;
+
 public class ComparableCircle extends Circle implements Comparable {
     public ComparableCircle() {
     }
