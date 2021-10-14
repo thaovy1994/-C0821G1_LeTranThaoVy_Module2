@@ -1,11 +1,11 @@
 package _08_cleancode_refactoring.exercise;
 
 public class TennisGame {
-    public static String getScore(String player1Name, String player2Name, int m_score1, int m_score2) {
+    public static String getScore(String firstPlayer, String secondPlayer, int firstScore, int secondScore) {
         String score = "";
         int tempScore = 0;
-        if (m_score1 == m_score2) {
-            switch (m_score1) {
+        if (firstScore == secondScore) {
+            switch (firstScore) {
                 case 0:
                     score = "Love-All";
                     break;
@@ -23,18 +23,22 @@ public class TennisGame {
                     break;
 
             }
-        } else if (m_score1 >= 4 || m_score2 >= 4) {
-            int minusResult = m_score1 - m_score2;
-            if (minusResult == 1) score = "Advantage player1";
-            else if (minusResult == -1) score = "Advantage player2";
-            else if (minusResult >= 2) score = "Win for player1";
-            else score = "Win for player2";
+        } else if (firstScore >= 4 || secondScore >= 4) {
+            int minusResult = firstScore - secondScore;
+            if (minusResult == 1) {
+                score = "Advantage player1";
+            } else if (minusResult == -1) {
+                score = "Advantage player2";
+            } else if (minusResult >= 2) {
+                score = "Win for player1";
+            } else score = "Win for player2";
         } else {
             for (int i = 1; i < 3; i++) {
-                if (i == 1) tempScore = m_score1;
-                else {
+                if (i == 1) {
+                    tempScore = firstScore;
+                } else {
                     score += "-";
-                    tempScore = m_score2;
+                    tempScore = secondScore;
                 }
                 switch (tempScore) {
                     case 0:
