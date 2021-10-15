@@ -1,4 +1,4 @@
-package _10_dsa_list.exercise.Linkedlist;
+package _10_dsa_list.exercise.linkedlist;
 
 public class MyLinkedList<E> {
     private class Node {
@@ -39,4 +39,8 @@ public class MyLinkedList<E> {
         temp.next = new Node(element);
         numNode++;
     }
+public void add(int index, E element){
+        Node temp = head;
+        Node holder;
+}
 }
