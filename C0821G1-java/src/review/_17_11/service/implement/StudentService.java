@@ -6,18 +6,20 @@ import review._17_11.service.IStudentService;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
 
 
 public class StudentService implements IStudentService {
-    private ArrayList<Student> myList;
-
-    public StudentService() {
-        this.myList = new ArrayList<Student>();
-    }
-
-    public StudentService(ArrayList<Student> myList) {
-        this.myList = myList;
-    }
+    List<Student> myList = new ArrayList<Student>();
+//    private ArrayList<Student> myList;
+//
+//    public StudentService() {
+//        this.myList = new ArrayList<Student>();
+//    }
+//
+//    public StudentService(ArrayList<Student> myList) {
+//        this.myList = myList;
+//    }
 
     @Override
     public void addStudent(Student student) {

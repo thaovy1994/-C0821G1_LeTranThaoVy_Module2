@@ -37,11 +37,11 @@ public class MainController {
                     System.out.println("Input average point: ");
                     int point = Integer.parseInt(input.nextLine());
                     Student student = new Student(id, name, address, point);
-                    myStudent.addStudent(index, student);
+//                    myStudent.addStudent(index, student);
                     break;
                 case 2:
                     System.out.println("2.Show Student List");
-                    myStudent.showStudent();
+//                    myStudent.showStudent();
                     break;
                 case 3:
                     System.out.println("3.Edit A Student information");
@@ -51,12 +51,12 @@ public class MainController {
                     System.out.println("4.Remove A Student");
                     System.out.println("Input Index to remove");
                     int index1 = Integer.parseInt(input.nextLine());
-                    myStudent.removeStudent();
+//                    myStudent.removeStudent();
                     break;
                 case 5:
                     System.out.println("5.Check Id YYY if it is in list ? ");
                     Student student1 = new Student();
-                    myStudent.checkId();
+//                    myStudent.checkId();
                     break;
                 case 6:
                     System.out.println("6.Input Id and show his/her information, if Id is not exist, alert ERROR ");
@@ -64,7 +64,7 @@ public class MainController {
                     break;
                 case 7:
                     System.out.println("7.Arrange Student in point");
-                    myStudent.arrangeInPoint();
+//                    myStudent.arrangeInPoint();
                     break;
 
             }
