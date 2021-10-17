@@ -1,4 +1,4 @@
-package review.bank;
+package review._10_11.bank;
 
 public class Main {
     public static void main(String[] args) {

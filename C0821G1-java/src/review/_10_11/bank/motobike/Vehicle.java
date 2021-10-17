@@ -1,4 +1,4 @@
-package review.motobike;
+package review._10_11.bank.motobike;
 
 public class Vehicle {
     private int cc;
