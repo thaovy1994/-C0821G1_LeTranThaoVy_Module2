@@ -12,7 +12,6 @@ public class MainController {
         int choices = 0;
         do {
             System.out.println("Manage Student");
-            System.out.println("Please choose: ");
             System.out.println("1.Add New Student");
             System.out.println("2.Show Student List");
             System.out.println("3.Edit A Student information");
@@ -21,6 +20,7 @@ public class MainController {
             System.out.println("6.Input Id and show his/her information, if Id is not exist, alert ERROR ");
             System.out.println("7.Arrange Student in point");
             System.out.println("0.Exit");
+            System.out.println("Please choose a number: ");
             choices = Integer.parseInt(input.nextLine());
             switch (choices) {
                 case 1:
