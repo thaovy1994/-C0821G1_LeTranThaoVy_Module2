@@ -50,12 +50,12 @@ public class StudentService implements IStudentService {
 
     @Override
     public void arrangeInPoint() {
-        Collections.sort(this.myList, new Comparator<Student>() {
+        Collections.sort(myList, new Comparator<Student>() {
             @Override
-            public int compare(Student student1, Student student12) {
-                if (student1.getPoint() < student12.getPoint()) {
+            public int compare(Student student1, Student student2) {
+                if (student1.getPoint() < student2.getPoint()) {
                     return -1;
-                } else if (student1.getPoint() > student12.getPoint()) {
+                } else if (student1.getPoint() > student2.getPoint()) {
                     return 1;
                 } else {
                     return 0;

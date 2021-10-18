@@ -1,15 +1,14 @@
 package review._17_11.controller;
 
 import review._17_11.model.Student;
+import review._17_11.service.implement.StudentService;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class MainController {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        Student myStudent = new Student();
+        StudentService myStudent = new StudentService();
         int choices = 0;
         do {
             System.out.println("Manage Student");
@@ -26,8 +25,6 @@ public class MainController {
             switch (choices) {
                 case 1:
                     System.out.println("1.Add New Student");
-                    System.out.println("Input Index to add");
-                    int index = Integer.parseInt(input.nextLine());
                     System.out.println("Input id: ");
                     int id = Integer.parseInt(input.nextLine());
                     System.out.println("Input name: ");
@@ -37,7 +34,7 @@ public class MainController {
                     System.out.println("Input average point: ");
                     int point = Integer.parseInt(input.nextLine());
                     Student student = new Student(id, name, address, point);
-//                    myStudent.addStudent(index, student);
+                    myStudent.addStudent(student);
                     break;
                 case 2:
                     System.out.println("2.Show Student List");
