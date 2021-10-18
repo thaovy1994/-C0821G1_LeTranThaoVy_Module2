@@ -29,7 +29,7 @@ public class StudentService implements IStudentService {
     @Override
     public void showStudent() {
         for (Student student : myList) {
-            System.out.println("Student: ");
+            System.out.println("Student: " + student.toString());
         }
     }
 

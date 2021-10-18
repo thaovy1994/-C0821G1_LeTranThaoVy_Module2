@@ -24,6 +24,9 @@ public class MainController {
             choices = Integer.parseInt(input.nextLine());
             switch (choices) {
                 case 1:
+                    System.out.println("Input the size of list: ");
+                    int size = Integer.parseInt(input.nextLine());
+
                     System.out.println("1.Add new Student");
                     System.out.println("Input id: ");
                     int id = Integer.parseInt(input.nextLine());

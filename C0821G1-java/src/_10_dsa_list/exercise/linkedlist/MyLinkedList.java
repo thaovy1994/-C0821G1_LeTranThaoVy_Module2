@@ -42,12 +42,20 @@ public class MyLinkedList<E> {
     public void add(int index, E element) {
         Node temp = head;
         Node holder;
-        for(int i=0;i<index-1&&temp.next!=null;i++){
-            temp=temp.next;
-            holder= temp.next;
-            temp.next=new Node(element);
-            temp.next.next=holder;
+        for (int i = 0; i < index - 1 && temp.next != null; i++) {
+            temp = temp.next;
+            holder = temp.next;
+            temp.next = new Node(element);
+            temp.next.next = holder;
             numNode++;
         }
+    }
+
+    public Object get(int index) {
+        Node temp = head;
+        for (int i = 0; i < index; i++) {
+            temp = temp.next;
+        }
+        return temp.data;
     }
 }
