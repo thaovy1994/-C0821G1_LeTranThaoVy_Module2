@@ -1,7 +1,7 @@
 package review._17_11.model;
 
 public class Student {
-    private int studentId;
+    private String studentId;
     private String studentName;
     private String address;
     private float point;
@@ -10,19 +10,23 @@ public class Student {
 
     }
 
-    public Student(int studentId, String studentName, String address, float point) {
+    public Student(String studentId, String studentName, String address, float point) {
         this.studentId = studentId;
         this.studentName = studentName;
         this.address = address;
         this.point = point;
     }
 
-    public int getStudentCode() {
-        return this.studentId;
+    public Student(String studentId) {
+        this.studentId = studentId;
     }
 
-    public void setStudentCode(int studentCode) {
-        this.studentId = studentCode;
+    public String getStudentId() {
+        return studentId;
+    }
+
+    public void setStudentId(int studentCode) {
+        this.studentId = studentId;
     }
 
     public String getStudentName() {

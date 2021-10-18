@@ -1,5 +1,6 @@
 package review._17_11.service.implement;
 
+import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
 import review._17_11.model.Student;
 import review._17_11.service.IStudentService;
 
@@ -34,17 +35,25 @@ public class StudentService implements IStudentService {
     }
 
     @Override
-    public void EditInformation() {
-
+    public void editInformation(int index) {
+        for (int i = 0; i < myList.size(); i++) {
+            myList.get(index).getStudentId();
+            myList.get(index).getStudentName();
+            myList.get(index).getAddress();
+            myList.get(index).getPoint();
+        }
     }
 
     @Override
-    public void removeStudent(int index) {
-        this.myList.remove(index);
+    public void removeStudent(int index1) {
+        myList.remove(index1);
     }
 
     @Override
     public boolean checkId(Student studentId) {
+        if (studentId != myList) {
+            System.out.println("ERROR");
+        }
         return this.myList.contains(studentId);
     }
 
