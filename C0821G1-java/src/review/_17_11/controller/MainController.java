@@ -38,7 +38,7 @@ public class MainController {
                     break;
                 case 2:
                     System.out.println("2.Show student list");
-//                    myStudent.showStudent();
+                    myStudent.showStudent();
                     break;
                 case 3:
                     System.out.println("3.Edit a student information");
@@ -61,7 +61,7 @@ public class MainController {
                     break;
                 case 7:
                     System.out.println("7.Arrange student in point");
-//                    myStudent.arrangeInPoint();
+                    myStudent.arrangeInPoint();
                     break;
 
             }
