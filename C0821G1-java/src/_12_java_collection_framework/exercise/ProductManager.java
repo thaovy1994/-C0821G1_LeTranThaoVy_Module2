@@ -1,5 +1,7 @@
 package _12_java_collection_framework.exercise;
 
+import review._17_11.model.Student;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,5 +41,12 @@ public class ProductManager {
     //Xoá sản phẩm theo id
     public void removeProduct(int id) {
         listProduct.remove(id);
+    }
+
+    //hiển thị danh sách sản phẩm
+    public void displaylistProduct(){
+        for (Product b : listProduct) {
+            System.out.println("Student: " + b.toString());
+        }
     }
 }

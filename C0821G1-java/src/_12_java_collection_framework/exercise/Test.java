@@ -5,9 +5,9 @@ import java.util.Scanner;
 public class Test {
     public static void main(String[] args) {
         ProductManager productManager = new ProductManager();
-        productManager.addProduct(new Product(1, "Milk", 20.000, 2));
-        productManager.addProduct(new Product(2, "Candy", 1.000, 10));
-        productManager.addProduct(new Product(3, "Cake", 10.000, 5));
+        productManager.addProduct(new Product(1, "Milk", 20000.0, 2));
+        productManager.addProduct(new Product(2, "Candy", 1000.0, 10));
+        productManager.addProduct(new Product(3, "Cake", 10000.0, 5));
 
         for (Product a : productManager.getListProduct()) {
             System.out.println(a);
@@ -26,5 +26,17 @@ public class Test {
 
         //remove
         System.out.print("Enter id to delete product: ");
+        int id1 = Integer.parseInt(input.nextLine());
+        productManager.removeProduct(id1);
+
+        //Display list Product
+        productManager.displaylistProduct();
+
+        //search
+
+
+        //arrange
+
+
     }
 }

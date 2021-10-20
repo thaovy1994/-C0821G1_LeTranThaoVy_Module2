@@ -10,71 +10,97 @@ public class MainController {
         Scanner input = new Scanner(System.in);
         StudentService myStudent = new StudentService();
         int choices = 0;
+        System.out.println("---Manage Student---");
+        System.out.println("1.Add new Student");
+        System.out.println("2.Show student list");
+        System.out.println("3.Edit a student information");
+        System.out.println("4.Remove a student from list");
+        System.out.println("5.Check id YYY if it is in list ? ");
+        System.out.println("6.Input id and show his/her information, if id is not exist, alert ERROR ");
+        System.out.println("7.Arrange student in point");
+        System.out.println("0.Exit");
         do {
-            System.out.println("Manage Student");
-            System.out.println("1.Add new Student");
-            System.out.println("2.Show student list");
-            System.out.println("3.Edit a student information");
-            System.out.println("4.Remove a student from list");
-            System.out.println("5.Check id YYY if it is in list ? ");
-            System.out.println("6.Input id and show his/her information, if id is not exist, alert ERROR ");
-            System.out.println("7.Arrange student in point");
-            System.out.println("0.Exit");
             System.out.print("Please choose a number: ");
             choices = Integer.parseInt(input.nextLine());
             switch (choices) {
                 case 1:
-                    System.out.println("1.Add new Student");
-                    System.out.println("Input id: ");
-                    String id = input.nextLine();
-                    System.out.println("Input name: ");
-                    String name = input.nextLine();
-                    System.out.println("Input address: ");
-                    String address = input.nextLine();
-                    System.out.println("Input average point: ");
-                    int point = Integer.parseInt(input.nextLine());
-                    Student student = new Student(id, name, address, point);
-                    myStudent.addStudent(student);
+//                    System.out.println("1.Add new Student");
+                    //Cách 1: Cho user nhập vào list Student
+//                    System.out.print("\tInput id: ");
+//                    int studentId = Integer.parseInt(input.nextLine());
+//                    System.out.print("\tInput name: ");
+//                    String studentName = input.nextLine();
+//                    System.out.print("\tInput address: ");
+//                    String address = input.nextLine();
+//                    System.out.print("\tInput point: ");
+//                    int point = Integer.parseInt(input.nextLine());
+//                    Student student = new Student(studentId, studentName, address, point);
+//                    myStudent.addStudent(student);
+
+//                    Cách 2: khởi tạo sẵn
+                    myStudent.addStudent(new Student(1, "Mina", "LTT", 9));
+                    myStudent.addStudent(new Student(2, "Rosie", "PCT", 7));
+                    myStudent.addStudent(new Student(3, "LiLy", "HHT", 6));
                     break;
                 case 2:
-                    System.out.println("2.Show student list");
-                    myStudent.showStudent();
+//                    System.out.println("2.Show student list");
+                    //Cách 1: dùng method showStudent()
+                    //myStudent.showStudent();
+                    //Cách 2: duyệt để hiển thị
+                    //dùng count để hiển thị index trước mỗi dòng student
+                    int count = 0;
+                    for (Student student : myStudent.getMyList()) {
+                        System.out.println(count++ + " : " + student);
+                    }
                     break;
                 case 3:
-                    System.out.println("3.Edit a student information");
-                    System.out.println("Input id: ");
-                    String id1 = input.nextLine();
-                    System.out.println("Input name: ");
-                    String name1 = input.nextLine();
-                    System.out.println("Input address: ");
-                    String address1 = input.nextLine();
-                    System.out.println("Input average point: ");
-                    int point1 = Integer.parseInt(input.nextLine());
-                    Student student2 = new Student(id1, name1, address1, point1);
-//                    myStudent.editInformation(student2.setStudentId(id1));
+//                    System.out.println("3.Edit a student information");
+                    //lấy getter của my list -> ví dụ lấy index 1 -> trả về obj student
+                    System.out.print("Enter index to edit: ");
+                    int index =Integer.parseInt(input.nextLine());
+                    Student student = myStudent.getMyList().get(index);
+                    System.out.print("Input new id: ");
+                    int id = Integer.parseInt(input.nextLine());
+                    System.out.print("Input new name: ");
+                    String name = input.nextLine();
+                    System.out.print("Input new address: ");
+                    String address = input.nextLine();
+                    System.out.print("Input new point: ");
+                    int point = Integer.parseInt(input.nextLine());
+                    student.setStudentId(id);
+                    student.setStudentName(name);
+                    student.setAddress(address);
+                    student.setPoint(point);
+
+                    myStudent.editInformation(student);
+                    System.out.println("***************************");
+
+                    for (Student student1 : myStudent.getMyList()) {
+                        System.out.println(student1);
+                    }
                     break;
                 case 4:
-                    System.out.println("4.Remove a student");
+//                    System.out.println("4.Remove a student");
                     System.out.println("Input index to remove");
                     int index1 = Integer.parseInt(input.nextLine());
                     myStudent.removeStudent(index1);
                     break;
                 case 5:
-                    System.out.println("5.Check id YYY if it is in list ? ");
+//                    System.out.println("5.Check id YYY if it is in list ? ");
                     System.out.print("Input id YYY: ");
-                    String id2 = input.nextLine();
+                    int id2 = Integer.parseInt(input.nextLine());
                     Student student1 = new Student(id2);
                     myStudent.checkId(student1);
                     break;
                 case 6:
-                    System.out.println("6.Input id and show his/her information, if id is not exist, alert ERROR ");
+//                    System.out.println("6.Input id and show his/her information, if id is not exist, alert ERROR ");
                     System.out.println("Input id: ");
-                    String id3 = input.nextLine();
+                    int id3 = Integer.parseInt(input.nextLine());
                     Student student3 = new Student(id3);
                     myStudent.checkId(student3);
                     break;
                 case 7:
-                    System.out.println("7.Arrange student in point");
+//                    System.out.println("7.Arrange student in point");
                     myStudent.arrangeInPoint();
                     break;
 

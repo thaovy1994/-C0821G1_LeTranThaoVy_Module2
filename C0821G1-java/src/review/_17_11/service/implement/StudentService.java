@@ -1,26 +1,35 @@
 package review._17_11.service.implement;
 
-import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
 import review._17_11.model.Student;
 import review._17_11.service.IStudentService;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.List;
-
 
 public class StudentService implements IStudentService {
-    List<Student> myList = new ArrayList<Student>();
-//    private ArrayList<Student> myList;
-//
-//    public StudentService() {
-//        this.myList = new ArrayList<Student>();
-//    }
-//
-//    public StudentService(ArrayList<Student> myList) {
-//        this.myList = myList;
-//    }
+    //Cách 1: Khai báo đối tượng or list rỗng -> user chỉ chọn 1 chức năng là tạo mới.
+    //List<Student> myList = new ArrayList<Student>();
+
+    //Cách 2: cung cấp user 2 lựa chọn: tạo mới or sử dụng cái có sẵn.
+    //Khai báo thuộc tính myList với constructor và getter/setter.
+    private ArrayList<Student> myList;
+
+    public StudentService() {
+        this.myList = new ArrayList<Student>();
+    }
+
+    public StudentService(ArrayList<Student> myList) {
+        this.myList = myList;
+    }
+
+    public ArrayList<Student> getMyList() {
+        return myList;
+    }
+
+    public void setMyList(ArrayList<Student> myList) {
+        this.myList = myList;
+    }
 
     @Override
     public void addStudent(Student student) {
@@ -30,17 +39,19 @@ public class StudentService implements IStudentService {
     @Override
     public void showStudent() {
         for (Student student : myList) {
-            System.out.println("Student: " + student.toString());
+            System.out.println("\tStudent: " + student.toString());
         }
     }
 
     @Override
-    public void editInformation(int index) {
-        for (int i = 0; i < myList.size(); i++) {
-            myList.get(index).getStudentId();
-            myList.get(index).getStudentName();
-            myList.get(index).getAddress();
-            myList.get(index).getPoint();
+    public void editInformation(Student student) {
+        //check "student" mà mình truyền vào có trong list ko ?
+        int index = myList.indexOf(student);
+        if (index == -1) {
+        //có thể alert "ERROR" hoặc lựa chọn add() nếu không có
+            addStudent(student);
+        }else{
+            myList.set(index, student);
         }
     }
 
@@ -51,27 +62,33 @@ public class StudentService implements IStudentService {
 
     @Override
     public boolean checkId(Student studentId) {
-        if (studentId != myList) {
-            System.out.println("ERROR");
-        }
+//        if (studentId != myList) {
+//            System.out.println("ERROR");
+//        }
         return this.myList.contains(studentId);
+//    }
     }
 
     @Override
     public void arrangeInPoint() {
-        Collections.sort(myList, new Comparator<Student>() {
-            @Override
-            public int compare(Student student1, Student student2) {
-                if (student1.getPoint() < student2.getPoint()) {
-                    return -1;
-                } else if (student1.getPoint() > student2.getPoint()) {
-                    return 1;
-                } else {
-                    return 0;
-                }
-            }
-        });
+
     }
+//        @Override
+//        public void arrangeInPoint () {
+//            Collections.sort(myList, new Comparator<Student>() {
+//                @Override
+//                public int compare(Student student1, Student student2) {
+//                    double result = student1.getPoint() - student2.getPoint();
+//                    if (result > 0) {
+//                        return -1;
+//                    } else if (result < 0) {
+//                        return 1;
+//                    } else {
+//                        return 0;
+//                    }
+//                }
+//            });
+//        }
 }
 
 
