@@ -25,7 +25,7 @@ public class Student {
         return studentId;
     }
 
-    public void setStudentId(int studentCode) {
+    public void setStudentId(int studentId) {
         this.studentId = studentId;
     }
 
@@ -61,5 +61,19 @@ public class Student {
                 ", address='" + address + '\'' +
                 ", point=" + point +
                 '}';
+    }
+
+    //Method so sánh 2 đối tượng với nhau
+    //Định nghĩa nên rule so sánh 2 object
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null || !(obj instanceof Student)) {
+            return false;
+        }
+        Student otherStudent = (Student) obj;
+        if (this.studentId == otherStudent.getStudentId()) {
+            return true;
+        }
+        return false;
     }
 }

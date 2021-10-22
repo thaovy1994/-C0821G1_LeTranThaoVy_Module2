@@ -48,47 +48,43 @@ public class StudentService implements IStudentService {
         //check "student" mà mình truyền vào có trong list ko ?
         int index = myList.indexOf(student);
         if (index == -1) {
-        //có thể alert "ERROR" hoặc lựa chọn add() nếu không có
+            //có thể alert "ERROR" hoặc lựa chọn add() nếu không có
             addStudent(student);
-        }else{
+        } else {
             myList.set(index, student);
         }
     }
 
     @Override
     public void removeStudent(int index1) {
-        myList.remove(index1);
+        if (index1 < 0 || index1 >= myList.size()) {
+            System.out.println("Index not found" + index1);
+        } else {
+            myList.remove(index1);
+        }
     }
 
     @Override
-    public boolean checkId(Student studentId) {
-//        if (studentId != myList) {
-//            System.out.println("ERROR");
-//        }
-        return this.myList.contains(studentId);
-//    }
+    public boolean isExist(Student student) {
+        return myList.contains(student);
     }
 
     @Override
     public void arrangeInPoint() {
-
+        Collections.sort(myList, new Comparator<Student>() {
+            @Override
+            public int compare(Student student1, Student student2) {
+                double result = student1.getPoint() - student2.getPoint();
+                if (result > 0) {
+                    return -1;
+                } else if (result < 0) {
+                    return 1;
+                } else {
+                    return 0;
+                }
+            }
+        });
     }
-//        @Override
-//        public void arrangeInPoint () {
-//            Collections.sort(myList, new Comparator<Student>() {
-//                @Override
-//                public int compare(Student student1, Student student2) {
-//                    double result = student1.getPoint() - student2.getPoint();
-//                    if (result > 0) {
-//                        return -1;
-//                    } else if (result < 0) {
-//                        return 1;
-//                    } else {
-//                        return 0;
-//                    }
-//                }
-//            });
-//        }
 }
 
 

@@ -24,7 +24,6 @@ public class MainController {
             choices = Integer.parseInt(input.nextLine());
             switch (choices) {
                 case 1:
-//                    System.out.println("1.Add new Student");
                     //Cách 1: Cho user nhập vào list Student
 //                    System.out.print("\tInput id: ");
 //                    int studentId = Integer.parseInt(input.nextLine());
@@ -43,7 +42,6 @@ public class MainController {
                     myStudent.addStudent(new Student(3, "LiLy", "HHT", 6));
                     break;
                 case 2:
-//                    System.out.println("2.Show student list");
                     //Cách 1: dùng method showStudent()
                     //myStudent.showStudent();
                     //Cách 2: duyệt để hiển thị
@@ -54,11 +52,12 @@ public class MainController {
                     }
                     break;
                 case 3:
-//                    System.out.println("3.Edit a student information");
                     //lấy getter của my list -> ví dụ lấy index 1 -> trả về obj student
+                    //Cách 1: user nhập
                     System.out.print("Enter index to edit: ");
                     int index =Integer.parseInt(input.nextLine());
                     Student student = myStudent.getMyList().get(index);
+
                     System.out.print("Input new id: ");
                     int id = Integer.parseInt(input.nextLine());
                     System.out.print("Input new name: ");
@@ -72,6 +71,8 @@ public class MainController {
                     student.setAddress(address);
                     student.setPoint(point);
 
+                    //Cách 2: nhập sẵn
+//                    Student student = new Student(3,"Lisa","QN", 7);
                     myStudent.editInformation(student);
                     System.out.println("***************************");
 
@@ -80,27 +81,23 @@ public class MainController {
                     }
                     break;
                 case 4:
-//                    System.out.println("4.Remove a student");
                     System.out.println("Input index to remove");
                     int index1 = Integer.parseInt(input.nextLine());
                     myStudent.removeStudent(index1);
                     break;
                 case 5:
-//                    System.out.println("5.Check id YYY if it is in list ? ");
                     System.out.print("Input id YYY: ");
                     int id2 = Integer.parseInt(input.nextLine());
                     Student student1 = new Student(id2);
-                    myStudent.checkId(student1);
+                    myStudent.isExist(student1);
                     break;
                 case 6:
-//                    System.out.println("6.Input id and show his/her information, if id is not exist, alert ERROR ");
                     System.out.println("Input id: ");
                     int id3 = Integer.parseInt(input.nextLine());
                     Student student3 = new Student(id3);
-                    myStudent.checkId(student3);
+//                    myStudent.checkId(student3);
                     break;
                 case 7:
-//                    System.out.println("7.Arrange student in point");
                     myStudent.arrangeInPoint();
                     break;
 

@@ -1,44 +1,47 @@
 package _11_stack_queue.exercise.map_count;
 
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Map;
-import java.util.Scanner;
-import java.util.Set;
-import java.util.TreeMap;
 
 public class Main {
     public static void main(String[] args) {
-        //sử dụng 1 TreeMap để lưu trữ một mục bao gồm một từ và số lượng của nó.
-        Map<String, Integer> myTreeMap = new TreeMap<>();
-        myTreeMap.put("aPPle", 5);
-
-        //Duyệt toàn bộ từ trong chuỗi.
-        //chuyển toàn bộ Key thành chữ hoa hoặc chữ thường.
-        for (Map.Entry<String, Integer> m : myTreeMap.entrySet()) {
-            System.out.println(m.getKey() + " " + m.getValue());
-            System.out.println("\t" + "Upper Case: " + m.getKey().toUpperCase());
-            System.out.println("\t" + "Lower Case: " + m.getKey().toLowerCase());
-            System.out.println("-----------------------");
-
-            //Kiểm tra xem trong map có key này hay chưa
-            String string = "My World";
-            System.out.println(string);
-            int count = 0;
-
-            Map<Character, Integer> myCounter = new TreeMap<>();
-
-            Scanner input = new Scanner(System.in);
-            System.out.print("Input char to check: ");
-            char character = input.next().charAt(0);
-
-
-            for (int i = 0; i < string.length(); i++) {
-                if (myCounter.containsKey(character)) {
-                    myCounter.put(character, count++);
-                } else {
-                    myCounter.put(character, 1);
-                }
+        //Đếm từ trong chuỗi:
+        String str = "Ha noi ha";
+        String[] myArr = str.toLowerCase().split(" ");
+        System.out.println(Arrays.toString(myArr));
+        Map<String, Integer> myMap = new HashMap<>();
+        for (int i = 0; i < myArr.length; i++) {
+            String key = myArr[i];
+            if (myMap.containsKey(key)) {
+                int currentValue = myMap.get(key);
+                myMap.put(key, currentValue + 1);
+            } else {
+                myMap.put(key, 1);
             }
         }
+        System.out.println(myMap);
+
+        //Đếm ký tự trong chuỗi:
+//        String str = "Ha noi ha";
+//        Map<String, Integer> myMap = new HashMap<>();
+//        String character;
+//        for (int i = 0; i < str.length(); i++) {
+//            //valueOf method dùng để chuyển đổi kiểu int, long... về String
+//            character = String.valueOf(str.charAt(i)).toLowerCase();
+//            if(myMap.containsKey(character)){
+//
+//                int currentValue = myMap.get(character); //lấy value
+//
+//                //cập nhật value 1 key trong map:
+//                //myMap.replace(character, currentValue + 1);
+//                myMap.put(character, currentValue + 1);
+//
+//            } else {
+//                myMap.put(character, 1);
+//            }
+//        }
+//        System.out.println(myMap);
     }
 }
 
