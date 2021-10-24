@@ -1,7 +1,5 @@
 package _12_java_collection_framework.exercise;
 
-import review._17_11.model.Student;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;

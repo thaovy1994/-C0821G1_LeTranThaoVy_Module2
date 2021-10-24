@@ -1,7 +1,48 @@
 package case_study.models;
 
-public class Villa extends Facility{
+import java.util.Date;
+
+public class Villa extends Facility {
     private String roomStandard;
     private float swimmingPoolArea;
     private byte floorNumber;
+
+    public Villa() {
+
+    }
+
+    public Villa(String serviceName, float area, double rentCost, short personNumber, Date rentType) {
+        super(serviceName, area, rentCost, personNumber, rentType);
+    }
+
+    public Villa(String serviceName, float area, double rentCost, short personNumber, Date rentType, String roomStandard, float swimmingPoolArea, byte floorNumber) {
+        super(serviceName, area, rentCost, personNumber, rentType);
+        this.roomStandard = roomStandard;
+        this.swimmingPoolArea = swimmingPoolArea;
+        this.floorNumber = floorNumber;
+    }
+
+    public String getRoomStandard() {
+        return roomStandard;
+    }
+
+    public void setRoomStandard(String roomStandard) {
+        this.roomStandard = roomStandard;
+    }
+
+    public float getSwimmingPoolArea() {
+        return swimmingPoolArea;
+    }
+
+    public void setSwimmingPoolArea(float swimmingPoolArea) {
+        this.swimmingPoolArea = swimmingPoolArea;
+    }
+
+    public byte getFloorNumber() {
+        return floorNumber;
+    }
+
+    public void setFloorNumber(byte floorNumber) {
+        this.floorNumber = floorNumber;
+    }
 }

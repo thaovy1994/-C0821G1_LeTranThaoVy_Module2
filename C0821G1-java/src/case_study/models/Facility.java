@@ -8,4 +8,56 @@ public abstract class Facility {
     private double rentCost;
     private short personNumber;
     private Date rentType;
+
+    public Facility(){
+
+    }
+
+    public Facility(String serviceName, float area, double rentCost, short personNumber, Date rentType) {
+        this.serviceName = serviceName;
+        this.area = area;
+        this.rentCost = rentCost;
+        this.personNumber = personNumber;
+        this.rentType = rentType;
+    }
+
+    public String getServiceName() {
+        return serviceName;
+    }
+
+    public void setServiceName(String serviceName) {
+        this.serviceName = serviceName;
+    }
+
+    public float getArea() {
+        return area;
+    }
+
+    public void setArea(float area) {
+        this.area = area;
+    }
+
+    public double getRentCost() {
+        return rentCost;
+    }
+
+    public void setRentCost(double rentCost) {
+        this.rentCost = rentCost;
+    }
+
+    public short getPersonNumber() {
+        return personNumber;
+    }
+
+    public void setPersonNumber(short personNumber) {
+        this.personNumber = personNumber;
+    }
+
+    public Date getRentType() {
+        return rentType;
+    }
+
+    public void setRentType(Date rentType) {
+        this.rentType = rentType;
+    }
 }
