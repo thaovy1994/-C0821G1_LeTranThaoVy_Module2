@@ -4,7 +4,7 @@ public class Candidates {
     private int candidateId;
     private String firstName;
     private String lastName;
-    private String birthDate;
+    private int birthDate;
     private String address;
     private int phone;
     private String email;
@@ -12,7 +12,7 @@ public class Candidates {
 
     public Candidates(){}
 
-    public Candidates(int candidateId, String firstName, String lastName, String birthDate, String address, int phone, String email, byte candidateType) {
+    public Candidates(int candidateId, String firstName, String lastName, int birthDate, String address, int phone, String email, byte candidateType) {
         this.candidateId = candidateId;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -20,6 +20,15 @@ public class Candidates {
         this.address = address;
         this.phone = phone;
         this.email = email;
+        this.candidateType = candidateType;
+    }
+
+    public Candidates(int candidateId, String firstName, String lastName, int birthDate, int phone, String graduationRank) {
+        this.candidateId = candidateId;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.birthDate = birthDate;
+        this.phone = phone;
         this.candidateType = candidateType;
     }
 
@@ -47,11 +56,11 @@ public class Candidates {
         this.lastName = lastName;
     }
 
-    public String getBirthDate() {
+    public int getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(String birthDate) {
+    public void setBirthDate(int birthDate) {
         this.birthDate = birthDate;
     }
 

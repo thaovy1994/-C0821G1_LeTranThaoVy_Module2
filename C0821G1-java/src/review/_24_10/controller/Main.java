@@ -27,6 +27,11 @@ public class Main {
                     int phone;
                     byte expInYear;
                     String graduationRank;
+                    System.out.println("Please input ID: ");
+                    int candidateId = Integer.parseInt(input.nextLine());
+                    System.out.println("Please input FirstName + LastName: ");
+                    String firstName = input.nextLine();
+                    String lastName = input.nextLine();
                     do {
                         System.out.println("Please input Birth Date: ");
                         birthDate = Integer.parseInt(input.nextLine());
@@ -42,9 +47,12 @@ public class Main {
                     do {
                         System.out.println("Please choose Rank of Graduation (Excellence, Good, Fair, Poor): ");
                         graduationRank = input.nextLine();
-                    } while (graduationRank != "Excellence" || graduationRank != "Good" || graduationRank != "Fair" || graduationRank != "Poor");
+                    } while (!graduationRank.equals("Excellence") || graduationRank.equals("Good") || graduationRank.equals("Fair") || graduationRank.equals("Poor"));
+                    Candidates candidates = new Candidates(candidateId, firstName, lastName, birthDate, phone, graduationRank);
+                    myCandidate.addCandidates(candidates);
                     break;
                 case 4:
+
                 case 5:
                     System.exit(5);
             }
