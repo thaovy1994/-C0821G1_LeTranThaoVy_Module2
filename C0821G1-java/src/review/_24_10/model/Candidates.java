@@ -1,7 +1,7 @@
 package review._24_10.model;
 
 public class Candidates {
-    private int candidateId;
+    private String candidateId;
     private String firstName;
     private String lastName;
     private int birthDate;
@@ -12,7 +12,7 @@ public class Candidates {
 
     public Candidates(){}
 
-    public Candidates(int candidateId, String firstName, String lastName, int birthDate, String address, int phone, String email, byte candidateType) {
+    public Candidates(String candidateId, String firstName, String lastName, int birthDate, String address, int phone, String email, byte candidateType) {
         this.candidateId = candidateId;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -23,20 +23,11 @@ public class Candidates {
         this.candidateType = candidateType;
     }
 
-    public Candidates(int candidateId, String firstName, String lastName, int birthDate, int phone, String graduationRank) {
-        this.candidateId = candidateId;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.birthDate = birthDate;
-        this.phone = phone;
-        this.candidateType = candidateType;
-    }
-
-    public int getCandidateId() {
+    public String getCandidateId() {
         return candidateId;
     }
 
-    public void setCandidateId(int candidateId) {
+    public void setCandidateId(String candidateId) {
         this.candidateId = candidateId;
     }
 
@@ -94,5 +85,19 @@ public class Candidates {
 
     public void setCandidateType(byte candidateType) {
         this.candidateType = candidateType;
+    }
+
+    @Override
+    public String toString() {
+        return "Candidates{" +
+                "candidateId='" + candidateId + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", birthDate=" + birthDate +
+                ", address='" + address + '\'' +
+                ", phone=" + phone +
+                ", email='" + email + '\'' +
+                ", candidateType=" + candidateType +
+                '}';
     }
 }

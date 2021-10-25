@@ -4,19 +4,14 @@ import review._24_10.model.Candidates;
 
 public class Intern extends Candidates {
     private String majors;
-    private byte semester;
+    private String semester;
     private String universityName;
 
     public Intern() {
+        super();
     }
 
-    public Intern(String majors, byte semester, String universityName) {
-        this.majors = majors;
-        this.semester = semester;
-        this.universityName = universityName;
-    }
-
-    public Intern(int candidateId, String firstName, String lastName, String birthDate, String address, int phone, String email, byte candidateType, String majors, byte semester, String universityName) {
+    public Intern(String candidateId, String firstName, String lastName, int birthDate, String address, int phone, String email, byte candidateType, String majors, String semester, String universityName) {
         super(candidateId, firstName, lastName, birthDate, address, phone, email, candidateType);
         this.majors = majors;
         this.semester = semester;
@@ -31,11 +26,11 @@ public class Intern extends Candidates {
         this.majors = majors;
     }
 
-    public byte getSemester() {
+    public String getSemester() {
         return semester;
     }
 
-    public void setSemester(byte semester) {
+    public void setSemester(String semester) {
         this.semester = semester;
     }
 

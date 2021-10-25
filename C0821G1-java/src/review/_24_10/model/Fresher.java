@@ -7,17 +7,11 @@ public class Fresher extends Candidates {
     private String graduationRank;
     private String education;
 
-    public Fresher(){
-
+    public Fresher() {
+        super();
     }
 
-    public Fresher(String graduationDate, String graduationRank, String education) {
-        this.graduationDate = graduationDate;
-        this.graduationRank = graduationRank;
-        this.education = education;
-    }
-
-    public Fresher(int candidateId, String firstName, String lastName, String birthDate, String address, int phone, String email, byte candidateType, String graduationDate, String graduationRank, String education) {
+    public Fresher(String candidateId, String firstName, String lastName, int birthDate, String address, int phone, String email, byte candidateType, String graduationDate, String graduationRank, String education) {
         super(candidateId, firstName, lastName, birthDate, address, phone, email, candidateType);
         this.graduationDate = graduationDate;
         this.graduationRank = graduationRank;
