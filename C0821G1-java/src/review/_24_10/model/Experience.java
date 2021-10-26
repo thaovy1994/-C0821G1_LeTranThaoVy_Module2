@@ -3,24 +3,26 @@ package review._24_10.model;
 import review._24_10.model.Candidates;
 
 public class Experience extends Candidates {
-    private byte expInYear;
+    private int expInYear;
     private String proSkill;
 
     public Experience() {
         super();
     }
 
-    public Experience(String candidateId, String firstName, String lastName, int birthDate, String address, int phone, String email, byte candidateType, byte expInYear, String proSkill) {
-        super(candidateId, firstName, lastName, birthDate, address, phone, email, candidateType);
+    public Experience(byte expInYear, String proSkill) {
         this.expInYear = expInYear;
         this.proSkill = proSkill;
     }
 
-    public byte getExpInYear() {
+    public Experience(String candidateId, String firstName, String lastName, int birthDate, String address, int phone, String email, int candidateType, int expInYear, String proSkill) {
+    }
+
+    public int getExpInYear() {
         return expInYear;
     }
 
-    public void setExpInYear(byte expInYear) {
+    public void setExpInYear(int expInYear) {
         this.expInYear = expInYear;
     }
 

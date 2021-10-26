@@ -8,11 +8,11 @@ public class Candidates {
     private String address;
     private int phone;
     private String email;
-    private byte candidateType; //0: for Experience, 1: for Fresher candidate, 2: for Intern candidate
+    private int candidateType; //0: for Experience, 1: for Fresher candidate, 2: for Intern candidate
 
     public Candidates(){}
 
-    public Candidates(String candidateId, String firstName, String lastName, int birthDate, String address, int phone, String email, byte candidateType) {
+    public Candidates(String candidateId, String firstName, String lastName, int birthDate, String address, int phone, String email, int candidateType) {
         this.candidateId = candidateId;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -79,11 +79,11 @@ public class Candidates {
         this.email = email;
     }
 
-    public byte getCandidateType() {
+    public int getCandidateType() {
         return candidateType;
     }
 
-    public void setCandidateType(byte candidateType) {
+    public void setCandidateType(int candidateType) {
         this.candidateType = candidateType;
     }
 
