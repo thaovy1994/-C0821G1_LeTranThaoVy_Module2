@@ -8,13 +8,13 @@ public class ReadAndWriteFile {
     public List<Integer> readFile(String filePath){
         List<Integer> numbers = new ArrayList<>();
         try {
-            File file = new File(filePath);
+            File file = new File(filePath);  //FileReader ?
 
             if (!file.exists()) {
                 throw new FileNotFoundException();
             }
 
-            BufferedReader br = new BufferedReader(new FileReader("src\\_16_io_text_file\\practice\\find_max_write_file\\result.txt"));
+            BufferedReader br = new BufferedReader(new FileReader("src\\_16_io_text_file\\practice\\find_max_write_file\\numbers.txt"));
             String line = "";
             while ((line = br.readLine()) != null) {
                 numbers.add(Integer.parseInt(line));

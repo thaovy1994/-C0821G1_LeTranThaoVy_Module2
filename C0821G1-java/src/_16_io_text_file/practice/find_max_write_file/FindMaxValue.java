@@ -14,8 +14,8 @@ public class FindMaxValue {
     }
     public static void main(String[] args) {
         ReadAndWriteFile readAndWriteFile = new ReadAndWriteFile();
-        List<Integer> numbers = readAndWriteFile.readFile("src\\_16_io_text_file\\practice\\find_max_write_file\\result.txt");
+        List<Integer> numbers = readAndWriteFile.readFile("src\\_16_io_text_file\\practice\\find_max_write_file\\numbers.txt");
         int maxValue = findMax(numbers);
-        System.out.println("max: "+maxValue);
+        readAndWriteFile.writeFile("src\\_16_io_text_file\\practice\\find_max_write_file\\result.txt", maxValue);
     }
 }

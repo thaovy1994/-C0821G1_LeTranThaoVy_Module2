@@ -3,7 +3,28 @@
   <component name="CsvFileAttributes">
     <option name="attributeMap">
       <map>
-        <entry key="\src\_16_io_text_file\practice\file.csv">
+        <entry key="\src\_16_io_text_file\exercise\copy_file_text\sourceFile.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\src\_16_io_text_file\exercise\read_file_csv\file.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\src\_16_io_text_file\practice\sum_read_file\file.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\src\_17_io_binary_file_serialization\exercise\file.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
