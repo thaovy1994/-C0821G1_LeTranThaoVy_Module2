@@ -1,28 +1,28 @@
-package _17_io_binary_file_serialization.exercise;
+package _17_io_binary_file_serialization.exercise.model;
 
 import java.io.Serializable;
 
 public class Product implements Serializable {
-    private String code;
+    private int code;
     private String name;
     private String manufacturer;
-    private float price;
+    private double price;
 
     public Product() {
     }
 
-    public Product(String code, String name, String manufacturer, float price) {
+    public Product(int code, String name, String manufacturer, double price) {
         this.code = code;
         this.name = name;
         this.manufacturer = manufacturer;
         this.price = price;
     }
 
-    public String getCode() {
+    public int getCode() {
         return code;
     }
 
-    public void setCode(String code) {
+    public void setCode(int code) {
         this.code = code;
     }
 
@@ -42,11 +42,11 @@ public class Product implements Serializable {
         this.manufacturer = manufacturer;
     }
 
-    public float getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(float price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
