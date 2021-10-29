@@ -1,6 +1,7 @@
 package _17_io_binary_file_serialization.exercise.controller;
 
 import _17_io_binary_file_serialization.exercise.service.ProductService;
+
 import java.util.Scanner;
 
 public class Main {
@@ -19,6 +20,7 @@ public class Main {
             switch (choice) {
                 case 1:
                     myProduct.addProduct();
+                    myProduct.write();
                     break;
                 case 2:
                     myProduct.showProduct();

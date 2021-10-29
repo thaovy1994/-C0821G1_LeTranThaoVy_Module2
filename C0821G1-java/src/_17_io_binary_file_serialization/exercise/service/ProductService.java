@@ -12,15 +12,17 @@ public class ProductService {
     Scanner input = new Scanner(System.in);
     private static List<Product> productList = new ArrayList<>();
 
-    List<Product> productRead = readFile("src\\_17_io_binary_file_serialization\\exercise\\product.txt");
-    
-//    writeFile("src\\_17_io_binary_file_serialization\\exercise\\product.txt",productList);
+    List<Product> productRead = readFile("src\\_17_io_binary_file_serialization\\exercise\\product.csv");
 
-    public static void writeFile(String path,List<Product> productList) {
+    public void write() {
+        writeFile("src\\_17_io_binary_file_serialization\\exercise\\product.csv", productList);
+    }
+
+    public static void writeFile(String path, List<Product> productList) {
         try {
             FileOutputStream output = new FileOutputStream(path);
             ObjectOutputStream objectOutput = new ObjectOutputStream(output);
-            productList.add(product);     //thêm sản phẩm vào list đã đọc
+//            productList.add(product);     //thêm sản phẩm vào list đã đọc
             objectOutput.writeObject(productList);
             output.close();
             objectOutput.close();
@@ -39,11 +41,11 @@ public class ProductService {
             input.close();
             objectInput.close();
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            System.out.println("File not found");
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Empty");
         } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+            System.out.println("Class not found");
         }
         return productList;
     }
