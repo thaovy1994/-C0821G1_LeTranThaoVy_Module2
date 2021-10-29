@@ -12,10 +12,11 @@ public class ProductService {
     Scanner input = new Scanner(System.in);
     private static List<Product> productList = new ArrayList<>();
 
-    List<Product> productWrite = writeFile("src\\_17_io_binary_file_serialization\\exercise\\file.csv",productList);
-    List<Product> productRead = readFile("src\\_17_io_binary_file_serialization\\exercise\\file.csv");
+    List<Product> productRead = readFile("src\\_17_io_binary_file_serialization\\exercise\\product.txt");
+    ProductService reader = new ProductService();
+//    writeFile("src\\_17_io_binary_file_serialization\\exercise\\product.txt",productList);
 
-    public static List<Product> writeFile(String path, List<Product> productList) {
+    public static void writeFile(String path,List<Product> productList) {
         try {
             FileOutputStream output = new FileOutputStream(path);
             ObjectOutputStream objectOutput = new ObjectOutputStream(output);
@@ -28,7 +29,6 @@ public class ProductService {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return productList;
     }
 
     public static List<Product> readFile(String path) {
