@@ -13,7 +13,7 @@ public class ProductService {
     private static List<Product> productList = new ArrayList<>();
 
     List<Product> productRead = readFile("src\\_17_io_binary_file_serialization\\exercise\\product.txt");
-    ProductService reader = new ProductService();
+    
 //    writeFile("src\\_17_io_binary_file_serialization\\exercise\\product.txt",productList);
 
     public static void writeFile(String path,List<Product> productList) {
