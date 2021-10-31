@@ -11,7 +11,7 @@ public class Fresher extends Candidates {
         super();
     }
 
-    public Fresher(String candidateId, String firstName, String lastName, int birthDate, String address, int phone, String email, byte candidateType, String graduationDate, String graduationRank, String education) {
+    public Fresher(String candidateId, String firstName, String lastName, int birthDate, String address, String phone, String email, int candidateType, String graduationDate, String graduationRank, String education) {
         super(candidateId, firstName, lastName, birthDate, address, phone, email, candidateType);
         this.graduationDate = graduationDate;
         this.graduationRank = graduationRank;

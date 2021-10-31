@@ -6,13 +6,13 @@ public class Candidates {
     private String lastName;
     private int birthDate;
     private String address;
-    private int phone;
+    private String phone;
     private String email;
     private int candidateType; //0: for Experience, 1: for Fresher candidate, 2: for Intern candidate
 
     public Candidates(){}
 
-    public Candidates(String candidateId, String firstName, String lastName, int birthDate, String address, int phone, String email, int candidateType) {
+    public Candidates(String candidateId, String firstName, String lastName, int birthDate, String address, String phone, String email, int candidateType) {
         this.candidateId = candidateId;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -63,11 +63,11 @@ public class Candidates {
         this.address = address;
     }
 
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
@@ -89,15 +89,12 @@ public class Candidates {
 
     @Override
     public String toString() {
-        return "Candidates{" +
-                "candidateId='" + candidateId + '\'' +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", birthDate=" + birthDate +
-                ", address='" + address + '\'' +
-                ", phone=" + phone +
-                ", email='" + email + '\'' +
-                ", candidateType=" + candidateType +
-                '}';
+        return this.getCandidateId() + this.getFirstName()
+                + this.getLastName()
+                + this.getBirthDate()
+                + this.getAddress()
+                + this.getPhone()
+                + this.getEmail()
+                + this.getCandidateType();
     }
 }

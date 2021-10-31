@@ -1,24 +1,10 @@
 package review._24_10.utils;
 
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 public class Validation {
     static Scanner input = new Scanner(System.in);
-
-    public static String inputEmail() {
-        String checkEmail = "";
-        boolean check = true;
-        while (check) {
-            System.out.println("Enter email: ");
-            checkEmail = input.nextLine();
-            if (!checkEmail.matches("[A-Za-z0-9.+-_%]+@[A-Za-z.-]+\\.[A-Za-z]{2,4}$")) {
-                System.out.println("No matches");
-            } else {
-                check = false;
-            }
-        }
-        return checkEmail;
-    }
 
     public static int inputBirthDate() {
         int birthDay;
@@ -29,14 +15,22 @@ public class Validation {
         return birthDay;
     }
 
-    public static int inputPhone() {
-        int phone;
-        do {
+    public static String inputPhone() {
+        String phone = null;
+        while (!Pattern.matches("^[0]+[0-9]{9,}$", phone)) {
             System.out.println("Phone is number with minimum 10 characters");
-            phone = Integer.parseInt(input.nextLine());
-        } while (phone >= 10);
-        System.out.println("Enter again");
+            phone = input.nextLine();
+        }
         return phone;
+    }
+
+    public static String inputEmail() {
+        String email = null;
+        while (!Pattern.matches("^[\\w_]+\\@([\\w]+\\.)+[\\w]+[\\w]$", email)) {
+            System.out.println("Enter wrong format !");
+            email = input.nextLine();
+        }
+        return email;
     }
 
     public static int checkExprienceYear() {
@@ -49,14 +43,16 @@ public class Validation {
 
     public static String checkInputGraduationRank() {
         while (true) {
-            String result = input.nextLine();
-            if (result.equalsIgnoreCase("Excellence")
-                    || result.equalsIgnoreCase("Good")
-                    || result.equalsIgnoreCase("Fair")
-                    || result.equalsIgnoreCase("Poor")) {
+            String result = null;
+            if (!Pattern.matches("Excellence", result)
+                    || Pattern.matches("Good", result)
+                    || Pattern.matches("Fair", result)
+                    || Pattern.matches("Poor", result)) {
+                System.out.print("Enter again: ");
+                result = input.nextLine();
                 return result;
             } else {
-                System.out.print("Enter again: ");
+                return result;
             }
         }
     }
