@@ -55,9 +55,22 @@ public class CandidateService implements ICandidateService {
             String email = Validation.inputEmail();
 
             System.out.println("Please input candidateType: ");
-
+            type = Integer.parseInt(input.nextLine());
             Candidates candidate = new Candidates(candidateId, firstName, lastName,
                     birthDate, address, phone, email, type);
+            do {
+                switch (type) {
+                    case 0:
+                        addExperience(candidate);
+                        break;
+                    case 1:
+                        addFresher(candidate);
+                        break;
+                    case 2:
+                        addIntern(candidate);
+                        break;
+                }
+            } while (type < 0 || type > 2);
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -70,19 +83,20 @@ public class CandidateService implements ICandidateService {
         int yearExperience = Validation.checkExprienceYear();
         System.out.print("Enter professional skill: ");
         String professionalSkill = input.nextLine();
-        myList.add(new Experience(candidate.getCandidateId(),
-                candidate.getFirstName(), candidate.getLastName(),
-                candidate.getBirthDate(), candidate.getAddress(),
-                candidate.getPhone(), candidate.getEmail(),
-                candidate.getCandidateType(),
-                yearExperience, professionalSkill));
         System.out.print("Do you want to continue (Y/N): ");
         String confirm = input.nextLine();
         if (confirm.equals("Y")) {
-            myList.add(new Experience());
+            myList.add(new Experience(candidate.getCandidateId(),
+                    candidate.getFirstName(), candidate.getLastName(),
+                    candidate.getBirthDate(), candidate.getAddress(),
+                    candidate.getPhone(), candidate.getEmail(),
+                    candidate.getCandidateType(),
+                    yearExperience, professionalSkill));
             System.err.println("Create success.");
-        } else {
+        } else if (confirm.equals("N")){
             showCandidates();
+        }else{
+
         }
     }
 
@@ -140,13 +154,7 @@ public class CandidateService implements ICandidateService {
     public void showCandidates() {
         System.out.println("---Product list---");
         for (Candidates candidates : myList) {
-            if (candidates instanceof Experience) {
-                System.out.println("Candidates: " + candidates.toString());
-            } else if (candidates instanceof Fresher) {
-                System.out.println("Candidates: " + candidates.toString());
-            } else if (candidates instanceof Intern) {
-                System.out.println("Candidates: ");
-            }
+            System.out.println(candidates);
         }
     }
 

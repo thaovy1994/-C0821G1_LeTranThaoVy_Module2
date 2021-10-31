@@ -9,7 +9,6 @@ import java.util.List;
 
 public class IOTestFileService implements IReadWriteService {
 
-
     @Override
     public void writeFile(Candidates candidates) {
         try {
