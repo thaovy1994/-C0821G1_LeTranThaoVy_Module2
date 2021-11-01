@@ -97,4 +97,5 @@ public class Candidates {
                 + this.getEmail()
                 + this.getCandidateType();
     }
+
 }

@@ -6,9 +6,9 @@ import java.util.List;
 
 public interface ICandidateService {
     void addCandidates(List<Candidates> myList, int type);
-    void addExperience(Candidates candidate);
-    void addFresher(Candidates candidate);
-    void addIntern(Candidates candidate);
+    void addExperience(List<Candidates> myList,Candidates candidate);
+    void addFresher(List<Candidates> myList,Candidates candidate);
+    void addIntern(List<Candidates> myList,Candidates candidate);
     void showCandidates();
     void searchCandidates();
 }

@@ -54,23 +54,20 @@ public class CandidateService implements ICandidateService {
             System.out.println("Please input email: ");
             String email = Validation.inputEmail();
 
-            System.out.println("Please input candidateType: ");
-            type = Integer.parseInt(input.nextLine());
             Candidates candidate = new Candidates(candidateId, firstName, lastName,
                     birthDate, address, phone, email, type);
-            do {
+
                 switch (type) {
                     case 0:
-                        addExperience(candidate);
+                        addExperience(myList, candidate);
                         break;
                     case 1:
-                        addFresher(candidate);
+                        addFresher(myList, candidate);
                         break;
                     case 2:
-                        addIntern(candidate);
+                        addIntern(myList, candidate);
                         break;
                 }
-            } while (type < 0 || type > 2);
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -78,71 +75,66 @@ public class CandidateService implements ICandidateService {
     }
 
     @Override
-    public void addExperience(Candidates candidate) {
+    public void addExperience(List<Candidates> myList, Candidates candidate) {
         System.out.print("Enter year of experience: ");
         int yearExperience = Validation.checkExprienceYear();
         System.out.print("Enter professional skill: ");
         String professionalSkill = input.nextLine();
         System.out.print("Do you want to continue (Y/N): ");
         String confirm = input.nextLine();
+//        myList.add(new Experience(candidate.getCandidateId(),
+//                candidate.getFirstName(), candidate.getLastName(),
+//                candidate.getBirthDate(), candidate.getAddress(),
+//                candidate.getPhone(), candidate.getEmail(),
+//                candidate.getCandidateType(),
+//                yearExperience, professionalSkill));
         if (confirm.equals("Y")) {
-            myList.add(new Experience(candidate.getCandidateId(),
-                    candidate.getFirstName(), candidate.getLastName(),
-                    candidate.getBirthDate(), candidate.getAddress(),
-                    candidate.getPhone(), candidate.getEmail(),
-                    candidate.getCandidateType(),
-                    yearExperience, professionalSkill));
             System.err.println("Create success.");
-        } else if (confirm.equals("N")){
-            showCandidates();
-        }else{
-
-        }
-    }
-
-    @Override
-    public void addFresher(Candidates candidate) {
-        System.out.println("Please enter date of graduation: ");
-        String graduationDate = input.nextLine();
-        System.out.println("Please choose Rank of Graduation (Excellence, Good, Fair, Poor): ");
-        String graduationRank = Validation.checkInputGraduationRank();
-        System.out.println("Please enter your university: ");
-        String education = input.nextLine();
-        myList.add(new Fresher(candidate.getCandidateId(),
-                candidate.getFirstName(), candidate.getLastName(),
-                candidate.getBirthDate(), candidate.getAddress(),
-                candidate.getPhone(), candidate.getEmail(),
-                candidate.getCandidateType(),
-                graduationDate, graduationRank, education));
-        System.out.print("Do you want to continue (Y/N): ");
-        String confirm = input.nextLine();
-        if (confirm.equals("Y")) {
-            myList.add(new Fresher());
-            System.err.println("Create success.");
-            System.out.println("");
         } else {
             showCandidates();
         }
     }
 
     @Override
-    public void addIntern(Candidates candidate) {
+    public void addFresher(List<Candidates> myList, Candidates candidate) {
+        System.out.println("Please enter date of graduation: ");
+        String graduationDate = input.nextLine();
+        System.out.println("Please choose Rank of Graduation (Excellence, Good, Fair, Poor): ");
+        String graduationRank = Validation.checkInputGraduationRank();
+        System.out.println("Please enter your university: ");
+        String education = input.nextLine();
+        System.out.print("Do you want to continue (Y/N): ");
+        String confirm = input.nextLine();
+        myList.add(new Fresher(candidate.getCandidateId(),
+                candidate.getFirstName(), candidate.getLastName(),
+                candidate.getBirthDate(), candidate.getAddress(),
+                candidate.getPhone(), candidate.getEmail(),
+                candidate.getCandidateType(),
+                graduationDate, graduationRank, education));
+        if (confirm.equals("Y")) {
+            System.err.println("Create success.");
+        } else {
+            showCandidates();
+        }
+    }
+
+    @Override
+    public void addIntern(List<Candidates> myList, Candidates candidate) {
         System.out.println("Please enter your majors: ");
         String majors = input.nextLine();
         System.out.println("Please enter your semester: ");
         String semester = input.nextLine();
         System.out.println("Please enter your University's name: ");
         String universityName = input.nextLine();
+        System.out.print("Do you want to continue (Y/N): ");
+        String confirm = input.nextLine();
         myList.add(new Intern(candidate.getCandidateId(),
                 candidate.getFirstName(), candidate.getLastName(),
                 candidate.getBirthDate(), candidate.getAddress(),
                 candidate.getPhone(), candidate.getEmail(),
                 candidate.getCandidateType(),
                 majors, semester, universityName));
-        System.out.print("Do you want to continue (Y/N): ");
-        String confirm = input.nextLine();
         if (confirm.equals("Y")) {
-            myList.add(new Intern());
             System.err.println("Create success.");
         } else {
             showCandidates();
@@ -154,7 +146,7 @@ public class CandidateService implements ICandidateService {
     public void showCandidates() {
         System.out.println("---Product list---");
         for (Candidates candidates : myList) {
-            System.out.println(candidates);
+            System.out.println(candidates.toString());
         }
     }
 

@@ -36,7 +36,7 @@ public class Validation {
     public static int checkExprienceYear() {
         int expInYear;
         do {
-            expInYear = input.nextInt();
+            expInYear = Integer.parseInt(input.nextLine());
         } while (expInYear < 0 || expInYear > 100);
         return expInYear;
     }
@@ -44,15 +44,13 @@ public class Validation {
     public static String checkInputGraduationRank() {
         while (true) {
             String result = input.nextLine();
-            if (!Pattern.matches("Excellence", result)
-                    || Pattern.matches("Good", result)
-                    || Pattern.matches("Fair", result)
-                    || Pattern.matches("Poor", result)) {
-                System.out.print("Wrong input, please input again: ");
-                result = input.nextLine();
+            if (result.equalsIgnoreCase("Excellence")
+                    || result.equalsIgnoreCase("Good")
+                    || result.equalsIgnoreCase("Fair")
+                    || result.equalsIgnoreCase("Poor")) {
                 return result;
             } else {
-                return result;
+                System.out.print("Enter again: ");
             }
         }
     }
