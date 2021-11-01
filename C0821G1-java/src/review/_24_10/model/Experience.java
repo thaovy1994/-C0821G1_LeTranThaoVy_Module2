@@ -32,9 +32,15 @@ public class Experience extends Candidates {
 
     @Override
     public String toString() {
-        return "Experience{" +
-                "expInYear=" + expInYear +
-                ", proSkill='" + proSkill + '\'' +
-                '}';
+        return this.getCandidateId() + ","
+                + this.getFirstName() + ","
+                + this.getLastName() + ","
+                + this.getBirthDate() + ","
+                + this.getAddress() + ","
+                + this.getPhone() + ","
+                + this.getEmail() + ","
+//                + this.getCandidateType() + ","
+                + this.getExpInYear() + ","
+                + this.getProSkill();
     }
 }

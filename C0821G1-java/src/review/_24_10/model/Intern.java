@@ -41,4 +41,19 @@ public class Intern extends Candidates {
     public void setUniversityName(String universityName) {
         this.universityName = universityName;
     }
+
+    @Override
+    public String toString() {
+        return this.getCandidateId() + ","
+                + this.getFirstName() + ","
+                + this.getLastName() + ","
+                + this.getBirthDate() + ","
+                + this.getAddress() + ","
+                + this.getPhone() + ","
+                + this.getEmail() + ","
+//                + this.getCandidateType() + ","
+                + this.getMajors() + ","
+                + this.getSemester() + ","
+                + this.getUniversityName();
+    }
 }

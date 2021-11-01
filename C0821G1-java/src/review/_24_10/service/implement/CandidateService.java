@@ -19,16 +19,24 @@ public class CandidateService implements ICandidateService {
         myList = new ArrayList<>();
     }
 
+//    public List<Candidates> getMyList() {
+//        return myList;
+//    }
+//
+//    public void setMyList(List<Candidates> myList) {
+//        this.myList = myList;
+//    }
+
     public CandidateService(List<Candidates> myList) {
         this.myList = myList;
     }
 
     Scanner input = new Scanner(System.in);
 
-    private IReadWriteService iReadWriteService = new IOTestFileService();
-
+//    private IReadWriteService iReadWriteService = new IOTestFileService();
+//
 //    public void write() {
-//        myList = this.iReadWriteService.writeFile();
+//        iReadWriteService.writeFile("src\\review\\_24_10\\candidates.csv", (Candidates) myList);
 //    }
 
     @Override
@@ -57,17 +65,17 @@ public class CandidateService implements ICandidateService {
             Candidates candidate = new Candidates(candidateId, firstName, lastName,
                     birthDate, address, phone, email, type);
 
-                switch (type) {
-                    case 0:
-                        addExperience(myList, candidate);
-                        break;
-                    case 1:
-                        addFresher(myList, candidate);
-                        break;
-                    case 2:
-                        addIntern(myList, candidate);
-                        break;
-                }
+            switch (type) {
+                case 0:
+                    addExperience(myList, candidate);
+                    break;
+                case 1:
+                    addFresher(myList, candidate);
+                    break;
+                case 2:
+                    addIntern(myList, candidate);
+                    break;
+            }
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -82,16 +90,16 @@ public class CandidateService implements ICandidateService {
         String professionalSkill = input.nextLine();
         System.out.print("Do you want to continue (Y/N): ");
         String confirm = input.nextLine();
-//        myList.add(new Experience(candidate.getCandidateId(),
-//                candidate.getFirstName(), candidate.getLastName(),
-//                candidate.getBirthDate(), candidate.getAddress(),
-//                candidate.getPhone(), candidate.getEmail(),
-//                candidate.getCandidateType(),
-//                yearExperience, professionalSkill));
+        myList.add(new Experience(candidate.getCandidateId(),
+                candidate.getFirstName(), candidate.getLastName(),
+                candidate.getBirthDate(), candidate.getAddress(),
+                candidate.getPhone(), candidate.getEmail(),
+                candidate.getCandidateType(),
+                yearExperience, professionalSkill));
         if (confirm.equals("Y")) {
             System.err.println("Create success.");
         } else {
-            showCandidates();
+            showCandidates(myList);
         }
     }
 
@@ -114,7 +122,7 @@ public class CandidateService implements ICandidateService {
         if (confirm.equals("Y")) {
             System.err.println("Create success.");
         } else {
-            showCandidates();
+            showCandidates(myList);
         }
     }
 
@@ -137,13 +145,13 @@ public class CandidateService implements ICandidateService {
         if (confirm.equals("Y")) {
             System.err.println("Create success.");
         } else {
-            showCandidates();
+            showCandidates(myList);
         }
     }
 
 
     @Override
-    public void showCandidates() {
+    public void showCandidates(List<Candidates> myList) {
         System.out.println("---Product list---");
         for (Candidates candidates : myList) {
             System.out.println(candidates.toString());
@@ -154,8 +162,8 @@ public class CandidateService implements ICandidateService {
     public void searchCandidates() {
         System.out.print("Enter candidate name (First name or Last name): ");
         String name = input.nextLine();
-        System.out.print("Enter type of candidate: ");
-        int type = input.nextByte();
+        System.out.print("Enter type of candidate (0: for Experience, 1: for Fresher candidate, 2: for Intern candidate): ");
+        int type = Integer.parseInt(input.nextLine());
         for (Candidates candidate : myList) {
             if (candidate.getCandidateType() == type && candidate.getFirstName().contains(name)
                     || candidate.getLastName().contains(name)) {

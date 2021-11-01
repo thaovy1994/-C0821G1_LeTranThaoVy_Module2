@@ -3,6 +3,7 @@ package review._24_10.service.implement;
 import review._24_10.model.Candidates;
 import review._24_10.service.IReadWriteService;
 
+import javax.xml.xpath.XPath;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,20 +11,20 @@ import java.util.List;
 public class IOTestFileService implements IReadWriteService {
 
     @Override
-    public void writeFile(Candidates candidates) {
+    public void writeFile(String path, List<Candidates> myList) {
         try {
-            FileWriter fileWriter = new FileWriter("src\\review\\_24_10\\candidates.csv", true);
+            FileWriter fileWriter = new FileWriter("src\\review\\_24_10\\candidates.csv", false);
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-            bufferedWriter.write(candidates.toString());
+            bufferedWriter.write(myList.toString());
             bufferedWriter.newLine();
             bufferedWriter.close();
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Error IO");
         }
     }
 
     @Override
-    public List<Candidates> readFile() {
+    public List<Candidates> readFile(String path) {
         List<Candidates> candidatesList = new ArrayList<>();
 
         try {
@@ -32,7 +33,10 @@ public class IOTestFileService implements IReadWriteService {
             String line;
             while ((line = bufferedReader.readLine()) != null) {
                 String[] candidate = line.split(",");
-                Candidates candidates = new Candidates(candidate[0], candidate[1], candidate[2], Integer.parseInt(candidate[3]), candidate[4], candidate[5], candidate[6], Integer.parseInt(candidate[7]));
+                Candidates candidates = new Candidates(candidate[0], candidate[1], candidate[2],
+                        Integer.parseInt(candidate[3]),
+                        candidate[4], candidate[5], candidate[6],
+                        Integer.parseInt(candidate[7]));
                 candidatesList.add(candidates);
             }
             bufferedReader.close();

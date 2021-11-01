@@ -9,6 +9,6 @@ public interface ICandidateService {
     void addExperience(List<Candidates> myList,Candidates candidate);
     void addFresher(List<Candidates> myList,Candidates candidate);
     void addIntern(List<Candidates> myList,Candidates candidate);
-    void showCandidates();
+    void showCandidates(List<Candidates> myList);
     void searchCandidates();
 }

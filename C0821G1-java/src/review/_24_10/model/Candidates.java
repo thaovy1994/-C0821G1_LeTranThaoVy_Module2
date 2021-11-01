@@ -10,9 +10,13 @@ public class Candidates {
     private String email;
     private int candidateType; //0: for Experience, 1: for Fresher candidate, 2: for Intern candidate
 
-    public Candidates(){}
+    public Candidates() {
+    }
 
-    public Candidates(String candidateId, String firstName, String lastName, int birthDate, String address, String phone, String email, int candidateType) {
+    public Candidates(String candidateId, String firstName, String lastName,
+                      int birthDate,
+                      String address, String phone, String email,
+                      int candidateType) {
         this.candidateId = candidateId;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -89,13 +93,13 @@ public class Candidates {
 
     @Override
     public String toString() {
-        return this.getCandidateId() + this.getFirstName()
-                + this.getLastName()
-                + this.getBirthDate()
-                + this.getAddress()
-                + this.getPhone()
-                + this.getEmail()
+        return this.getCandidateId() + ","
+                + this.getFirstName() + ","
+                + this.getLastName() + ","
+                + this.getBirthDate() + ","
+                + this.getAddress() + ","
+                + this.getPhone() + ","
+                + this.getEmail() + ","
                 + this.getCandidateType();
     }
-
 }

@@ -5,6 +5,6 @@ import review._24_10.model.Candidates;
 import java.util.List;
 
 public interface IReadWriteService {
-    List<Candidates> readFile();
-    void writeFile(Candidates candidates);
+    List<Candidates> readFile(String path);
+    void writeFile(String path, List<Candidates> myList);
 }

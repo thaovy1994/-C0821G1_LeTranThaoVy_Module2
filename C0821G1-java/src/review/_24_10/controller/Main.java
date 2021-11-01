@@ -1,9 +1,10 @@
 package review._24_10.controller;
 
 import review._24_10.model.Candidates;
-import review._24_10.model.Experience;
 import review._24_10.service.ICandidateService;
+import review._24_10.service.IReadWriteService;
 import review._24_10.service.implement.CandidateService;
+import review._24_10.service.implement.IOTestFileService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,6 +15,8 @@ public class Main {
         Scanner input = new Scanner(System.in);
         ICandidateService myCandidate = new CandidateService();
         List<Candidates> myList = new ArrayList<>();
+        IReadWriteService myFile = new IOTestFileService();
+        myFile.readFile("src\\review\\_24_10\\candidates.csv");
         int choices = 0;
         do {
             System.out.println("*** CANDIDATE MANAGEMENT SYSTEM ***");
@@ -27,12 +30,15 @@ public class Main {
             switch (choices) {
                 case 1:
                     myCandidate.addCandidates(myList, 0);
+                    myFile.writeFile("src\\\\review\\\\_24_10\\\\candidates.csv", myList);
                     break;
                 case 2:
                     myCandidate.addCandidates(myList,1);
+                    myFile.writeFile("src\\\\review\\\\_24_10\\\\candidates.csv", myList);
                     break;
                 case 3:
                     myCandidate.addCandidates(myList,2);
+                    myFile.writeFile("src\\\\review\\\\_24_10\\\\candidates.csv",myList);
                     break;
                 case 4:
                     myCandidate.searchCandidates();

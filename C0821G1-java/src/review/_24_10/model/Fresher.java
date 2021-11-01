@@ -41,4 +41,19 @@ public class Fresher extends Candidates {
     public void setEducation(String education) {
         this.education = education;
     }
+
+    @Override
+    public String toString() {
+        return this.getCandidateId() + ","
+                + this.getFirstName() + ","
+                + this.getLastName() + ","
+                + this.getBirthDate() + ","
+                + this.getAddress() + ","
+                + this.getPhone() + ","
+                + this.getEmail() + ","
+//                + this.getCandidateType() + ","
+                + this.getGraduationDate() + ","
+                + this.getGraduationRank() + ","
+                + this.getEducation();
+    }
 }
