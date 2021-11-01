@@ -13,7 +13,7 @@ public class IOTestFileService implements IReadWriteService {
     @Override
     public void writeFile(String path, List<Candidates> myList) {
         try {
-            FileWriter fileWriter = new FileWriter("src\\review\\_24_10\\candidates.csv", false);
+            FileWriter fileWriter = new FileWriter("src\\review\\_24_10\\candidates.csv", true);
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
             bufferedWriter.write(myList.toString());
             bufferedWriter.newLine();
