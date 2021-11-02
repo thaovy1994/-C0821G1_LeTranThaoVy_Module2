@@ -19,25 +19,19 @@ public class CandidateService implements ICandidateService {
         myList = new ArrayList<>();
     }
 
-//    public List<Candidates> getMyList() {
-//        return myList;
-//    }
-//
-//    public void setMyList(List<Candidates> myList) {
-//        this.myList = myList;
-//    }
+    public List<Candidates> getMyList() {
+        return myList;
+    }
+
+    public void setMyList(List<Candidates> myList) {
+        this.myList = myList;
+    }
 
     public CandidateService(List<Candidates> myList) {
         this.myList = myList;
     }
 
     Scanner input = new Scanner(System.in);
-
-//    private IReadWriteService iReadWriteService = new IOTestFileService();
-//
-//    public void write() {
-//        iReadWriteService.writeFile("src\\review\\_24_10\\candidates.csv", (Candidates) myList);
-//    }
 
     @Override
     public void addCandidates(List<Candidates> myList, int type) {
@@ -159,7 +153,7 @@ public class CandidateService implements ICandidateService {
     }
 
     @Override
-    public void searchCandidates() {
+    public void searchCandidates(List<Candidates> myList) {
         System.out.print("Enter candidate name (First name or Last name): ");
         String name = input.nextLine();
         System.out.print("Enter type of candidate (0: for Experience, 1: for Fresher candidate, 2: for Intern candidate): ");

@@ -10,5 +10,5 @@ public interface ICandidateService {
     void addFresher(List<Candidates> myList,Candidates candidate);
     void addIntern(List<Candidates> myList,Candidates candidate);
     void showCandidates(List<Candidates> myList);
-    void searchCandidates();
+    void searchCandidates(List<Candidates> myList);
 }

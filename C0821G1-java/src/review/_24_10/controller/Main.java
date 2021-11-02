@@ -41,7 +41,7 @@ public class Main {
                     myFile.writeFile("src\\\\review\\\\_24_10\\\\candidates.csv",myList);
                     break;
                 case 4:
-                    myCandidate.searchCandidates();
+                    myCandidate.searchCandidates(myList);
                     break;
                 case 5:
                     System.exit(5);
