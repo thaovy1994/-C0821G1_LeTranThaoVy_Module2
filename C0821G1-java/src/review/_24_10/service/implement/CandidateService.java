@@ -144,7 +144,7 @@ public class CandidateService implements ICandidateService {
         }
     }
 
-//    @Override
+    //    @Override
 //    public void searchCandidates(List<Candidates> myList) {
 //        System.out.print("Enter candidate name (First name or Last name): ");
 //        String name = input.nextLine();
@@ -166,10 +166,10 @@ public class CandidateService implements ICandidateService {
             if (candidate.getFirstName().contains(name)
                     || candidate.getLastName().contains(name)) {
                 System.out.println(candidate.toString());
-                isFound =true;
+                isFound = true;
             }
         }
-        if (!isFound){
+        if (!isFound) {
             System.out.println("Not found");
         }
     }

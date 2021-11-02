@@ -36,6 +36,7 @@ public class IOTestFileService implements IReadWriteService {
                         Integer.parseInt(candidate[3]),
                         candidate[4], candidate[5], candidate[6],
                         Integer.parseInt(candidate[7]));
+
                 candidatesList.add(candidates);
             }
             bufferedReader.close();
