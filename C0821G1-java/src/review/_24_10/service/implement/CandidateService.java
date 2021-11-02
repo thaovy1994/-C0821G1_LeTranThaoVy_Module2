@@ -5,7 +5,7 @@ import review._24_10.model.Experience;
 import review._24_10.model.Fresher;
 import review._24_10.model.Intern;
 import review._24_10.service.ICandidateService;
-import review._24_10.service.IReadWriteService;
+
 import review._24_10.utils.Validation;
 
 import java.util.ArrayList;
@@ -13,23 +13,15 @@ import java.util.List;
 import java.util.Scanner;
 
 public class CandidateService implements ICandidateService {
-    public List<Candidates> myList;
+//    public List<Candidates> myList;
+//
+//    public CandidateService() {
+//        myList = new ArrayList<>();
+//    }
 
-    public CandidateService() {
-        myList = new ArrayList<>();
-    }
-
-    public List<Candidates> getMyList() {
-        return myList;
-    }
-
-    public void setMyList(List<Candidates> myList) {
-        this.myList = myList;
-    }
-
-    public CandidateService(List<Candidates> myList) {
-        this.myList = myList;
-    }
+//    public CandidateService(List<Candidates> myList) {
+//        this.myList = myList;
+//    }
 
     Scanner input = new Scanner(System.in);
 
@@ -152,17 +144,33 @@ public class CandidateService implements ICandidateService {
         }
     }
 
+//    @Override
+//    public void searchCandidates(List<Candidates> myList) {
+//        System.out.print("Enter candidate name (First name or Last name): ");
+//        String name = input.nextLine();
+//        System.out.print("Enter type of candidate (0: for Experience, 1: for Fresher candidate, 2: for Intern candidate): ");
+//        int type = Integer.parseInt(input.nextLine());
+//        for (Candidates candidate : myList) {
+//            if (candidate.getCandidateType() == type && candidate.getFirstName().contains(name)
+//                    || candidate.getLastName().contains(name)) {
+//                System.out.println(candidate.toString());
+//            }
+//        }
+//    }
     @Override
     public void searchCandidates(List<Candidates> myList) {
         System.out.print("Enter candidate name (First name or Last name): ");
         String name = input.nextLine();
-        System.out.print("Enter type of candidate (0: for Experience, 1: for Fresher candidate, 2: for Intern candidate): ");
-        int type = Integer.parseInt(input.nextLine());
+        boolean isFound = false;
         for (Candidates candidate : myList) {
-            if (candidate.getCandidateType() == type && candidate.getFirstName().contains(name)
+            if (candidate.getFirstName().contains(name)
                     || candidate.getLastName().contains(name)) {
                 System.out.println(candidate.toString());
+                isFound =true;
             }
+        }
+        if (!isFound){
+            System.out.println("Not found");
         }
     }
 }
