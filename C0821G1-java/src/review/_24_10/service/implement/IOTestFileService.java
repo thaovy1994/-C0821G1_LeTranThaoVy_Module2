@@ -1,6 +1,8 @@
 package review._24_10.service.implement;
 
 import review._24_10.model.Candidates;
+import review._24_10.model.Experience;
+import review._24_10.model.Fresher;
 import review._24_10.service.IReadWriteService;
 
 import java.io.*;
@@ -36,8 +38,8 @@ public class IOTestFileService implements IReadWriteService {
                         Integer.parseInt(candidate[3]),
                         candidate[4], candidate[5], candidate[6],
                         Integer.parseInt(candidate[7]));
-
                 candidatesList.add(candidates);
+
             }
             bufferedReader.close();
         } catch (FileNotFoundException e) {

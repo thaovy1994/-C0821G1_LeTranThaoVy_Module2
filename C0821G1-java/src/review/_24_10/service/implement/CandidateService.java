@@ -140,7 +140,7 @@ public class CandidateService implements ICandidateService {
     public void showCandidates(List<Candidates> myList) {
         System.out.println("---Product list---");
         for (Candidates candidates : myList) {
-            System.out.println(candidates.toString());
+            System.out.println(candidates);
         }
     }
 
