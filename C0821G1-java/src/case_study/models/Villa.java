@@ -8,7 +8,7 @@ public class Villa extends Facility {
     private byte floorNumber;
 
     public Villa() {
-
+        super();
     }
 
     public Villa(String serviceName, float area, double rentCost, short personNumber, Date rentType) {
@@ -44,5 +44,13 @@ public class Villa extends Facility {
 
     public void setFloorNumber(byte floorNumber) {
         this.floorNumber = floorNumber;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "," +
+                this.getRoomStandard() + "," +
+                this.getSwimmingPoolArea() + "," +
+                this.getFloorNumber();
     }
 }

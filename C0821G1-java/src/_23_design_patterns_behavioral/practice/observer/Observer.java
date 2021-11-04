@@ -1,4 +1,6 @@
 package _23_design_patterns_behavioral.practice.observer;
 
-public class Observer {
+public abstract class Observer {
+    protected Subject subject;
+    public abstract void update();
 }

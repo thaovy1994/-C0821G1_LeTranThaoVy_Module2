@@ -6,11 +6,18 @@ import java.net.URL;
 import java.net.URLConnection;
 
 public class FileDownloader implements Downloader {
+    private String userAgent;
+
+    public FileDownloader(String userAgent) {
+        this.userAgent = userAgent;
+    }
+
     @Override
-    public void download() {
+    public void download(String url) {
         try {
-            URL url = new URL("https://james.codegym.vn/mod/assign/view.php?id=9334");
-            URLConnection u = url.openConnection();
+            URL link = new URL("https://james.codegym.vn/mod/assign/view.php?id=9334");
+            URLConnection u = link.openConnection();
+        //ghi file trực tiếp trên phần mềm
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -18,5 +25,4 @@ public class FileDownloader implements Downloader {
         }
 
     }
-
 }

@@ -4,16 +4,16 @@ import java.util.Date;
 
 public abstract class Facility {
     private String serviceName;
-    private float area;
+    private double area;
     private double rentCost;
     private short personNumber;
     private Date rentType;
 
-    public Facility(){
+    public Facility() {
 
     }
 
-    public Facility(String serviceName, float area, double rentCost, short personNumber, Date rentType) {
+    public Facility(String serviceName, double area, double rentCost, short personNumber, Date rentType) {
         this.serviceName = serviceName;
         this.area = area;
         this.rentCost = rentCost;
@@ -29,7 +29,7 @@ public abstract class Facility {
         this.serviceName = serviceName;
     }
 
-    public float getArea() {
+    public double getArea() {
         return area;
     }
 
@@ -59,5 +59,14 @@ public abstract class Facility {
 
     public void setRentType(Date rentType) {
         this.rentType = rentType;
+    }
+
+    @Override
+    public String toString() {
+        return this.getServiceName() + "," +
+                this.getArea() + "," +
+                this.getRentCost() + "," +
+                this.getPersonNumber() + "," +
+                this.getRentType();
     }
 }

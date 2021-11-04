@@ -1,4 +1,10 @@
-package case_study.services.implement;
+package case_study.services;
 
-public interface CustomerService {
+import case_study.models.Customer;
+import case_study.models.Employee;
+
+public interface CustomerService extends Service {
+    void addCustomer(Customer customer);
+    void edit(Customer customer);
+    void changeInformation(Customer customer);
 }
