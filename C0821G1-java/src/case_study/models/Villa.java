@@ -11,11 +11,11 @@ public class Villa extends Facility {
         super();
     }
 
-    public Villa(String serviceName, float area, double rentCost, short personNumber, Date rentType) {
+    public Villa(String serviceName, float area, double rentCost, short personNumber, String rentType) {
         super(serviceName, area, rentCost, personNumber, rentType);
     }
 
-    public Villa(String serviceName, float area, double rentCost, short personNumber, Date rentType, String roomStandard, float swimmingPoolArea, byte floorNumber) {
+    public Villa(String serviceName, float area, double rentCost, short personNumber, String rentType, String roomStandard, float swimmingPoolArea, byte floorNumber) {
         super(serviceName, area, rentCost, personNumber, rentType);
         this.roomStandard = roomStandard;
         this.swimmingPoolArea = swimmingPoolArea;

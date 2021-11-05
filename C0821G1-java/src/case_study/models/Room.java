@@ -9,11 +9,11 @@ public class Room extends Facility {
         super();
     }
 
-    public Room(String serviceName, float area, double rentCost, short personNumber, Date rentType) {
+    public Room(String serviceName, float area, double rentCost, short personNumber, String rentType) {
         super(serviceName, area, rentCost, personNumber, rentType);
     }
 
-    public Room(String serviceName, float area, double rentCost, short personNumber, Date rentType, String freeService) {
+    public Room(String serviceName, float area, double rentCost, short personNumber, String rentType, String freeService) {
         super(serviceName, area, rentCost, personNumber, rentType);
         this.freeService = freeService;
     }

@@ -10,11 +10,11 @@ public class House extends Facility {
         super();
     }
 
-    public House(String serviceName, float area, double rentCost, short personNumber, Date rentType) {
+    public House(String serviceName, float area, double rentCost, short personNumber, String rentType) {
         super(serviceName, area, rentCost, personNumber, rentType);
     }
 
-    public House(String serviceName, float area, double rentCost, short personNumber, Date rentType, String roomStandard, byte floorNumber) {
+    public House(String serviceName, float area, double rentCost, short personNumber, String rentType, String roomStandard, byte floorNumber) {
         super(serviceName, area, rentCost, personNumber, rentType);
         this.roomStandard = roomStandard;
         this.floorNumber = floorNumber;

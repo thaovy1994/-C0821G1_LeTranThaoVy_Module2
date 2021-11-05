@@ -7,13 +7,13 @@ public abstract class Facility {
     private double area;
     private double rentCost;
     private short personNumber;
-    private Date rentType;
+    private String rentType;
 
     public Facility() {
 
     }
 
-    public Facility(String serviceName, double area, double rentCost, short personNumber, Date rentType) {
+    public Facility(String serviceName, double area, double rentCost, short personNumber, String rentType) {
         this.serviceName = serviceName;
         this.area = area;
         this.rentCost = rentCost;
@@ -53,11 +53,11 @@ public abstract class Facility {
         this.personNumber = personNumber;
     }
 
-    public Date getRentType() {
+    public String getRentType() {
         return rentType;
     }
 
-    public void setRentType(Date rentType) {
+    public void setRentType(String rentType) {
         this.rentType = rentType;
     }
 
