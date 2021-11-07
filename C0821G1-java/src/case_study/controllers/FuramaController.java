@@ -161,8 +161,8 @@ public class FuramaController {
                                     break;
                                 case 2:
                                     addFacilityMenu();
-                                    int choice = Integer.parseInt(input.nextLine());
                                     while (true) {
+                                        int choice = Integer.parseInt(input.nextLine());
                                         switch (choice) {
                                             case 1:
                                                 facilityService.createVilla();
