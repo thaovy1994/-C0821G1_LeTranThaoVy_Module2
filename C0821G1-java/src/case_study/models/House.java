@@ -4,18 +4,18 @@ import java.util.Date;
 
 public class House extends Facility {
     private String roomStandard;
-    private byte floorNumber;
+    private int floorNumber;
 
     public House() {
         super();
     }
 
-    public House(String serviceName, float area, double rentCost, short personNumber, String rentType) {
-        super(serviceName, area, rentCost, personNumber, rentType);
+    public House(String serviceName, double area, double roomRate, int personNumber, String rentType) {
+        super(serviceName, area, roomRate, personNumber, rentType);
     }
 
-    public House(String serviceName, float area, double rentCost, short personNumber, String rentType, String roomStandard, byte floorNumber) {
-        super(serviceName, area, rentCost, personNumber, rentType);
+    public House(String serviceName, double area, double roomRate, int personNumber, String rentType, String roomStandard, int floorNumber) {
+        super(serviceName, area, roomRate, personNumber, rentType);
         this.roomStandard = roomStandard;
         this.floorNumber = floorNumber;
     }
@@ -28,11 +28,11 @@ public class House extends Facility {
         this.roomStandard = roomStandard;
     }
 
-    public byte getFloorNumber() {
+    public int getFloorNumber() {
         return floorNumber;
     }
 
-    public void setFloorNumber(byte floorNumber) {
+    public void setFloorNumber(int floorNumber) {
         this.floorNumber = floorNumber;
     }
 

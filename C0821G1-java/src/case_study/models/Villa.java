@@ -1,22 +1,21 @@
 package case_study.models;
 
-import java.util.Date;
-
 public class Villa extends Facility {
     private String roomStandard;
-    private float swimmingPoolArea;
-    private byte floorNumber;
+    private double swimmingPoolArea;
+    private int floorNumber;
 
     public Villa() {
         super();
     }
 
-    public Villa(String serviceName, float area, double rentCost, short personNumber, String rentType) {
-        super(serviceName, area, rentCost, personNumber, rentType);
+    public Villa(String serviceName, double area, double roomRate, int personNumber, String rentType) {
+        super(serviceName, area, roomRate, personNumber, rentType);
     }
 
-    public Villa(String serviceName, float area, double rentCost, short personNumber, String rentType, String roomStandard, float swimmingPoolArea, byte floorNumber) {
-        super(serviceName, area, rentCost, personNumber, rentType);
+    public Villa(String serviceName, double area, double roomRate, int personNumber, String rentType,
+                 String roomStandard, double swimmingPoolArea, int floorNumber) {
+        super(serviceName, area, roomRate, personNumber, rentType);
         this.roomStandard = roomStandard;
         this.swimmingPoolArea = swimmingPoolArea;
         this.floorNumber = floorNumber;
@@ -30,19 +29,19 @@ public class Villa extends Facility {
         this.roomStandard = roomStandard;
     }
 
-    public float getSwimmingPoolArea() {
+    public double getSwimmingPoolArea() {
         return swimmingPoolArea;
     }
 
-    public void setSwimmingPoolArea(float swimmingPoolArea) {
+    public void setSwimmingPoolArea(double swimmingPoolArea) {
         this.swimmingPoolArea = swimmingPoolArea;
     }
 
-    public byte getFloorNumber() {
+    public int getFloorNumber() {
         return floorNumber;
     }
 
-    public void setFloorNumber(byte floorNumber) {
+    public void setFloorNumber(int floorNumber) {
         this.floorNumber = floorNumber;
     }
 

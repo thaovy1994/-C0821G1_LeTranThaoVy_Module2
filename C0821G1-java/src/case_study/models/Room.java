@@ -1,7 +1,5 @@
 package case_study.models;
 
-import java.util.Date;
-
 public class Room extends Facility {
     private String freeService;
 
@@ -9,12 +7,12 @@ public class Room extends Facility {
         super();
     }
 
-    public Room(String serviceName, float area, double rentCost, short personNumber, String rentType) {
-        super(serviceName, area, rentCost, personNumber, rentType);
+    public Room(String serviceName, double area, double roomRate, int personNumber, String rentType) {
+        super(serviceName, area, roomRate, personNumber, rentType);
     }
 
-    public Room(String serviceName, float area, double rentCost, short personNumber, String rentType, String freeService) {
-        super(serviceName, area, rentCost, personNumber, rentType);
+    public Room(String serviceName, double area, double roomRate, int personNumber, String rentType, String freeService) {
+        super(serviceName, area, roomRate, personNumber, rentType);
         this.freeService = freeService;
     }
 

@@ -1,22 +1,19 @@
 package case_study.models;
 
-import java.util.Date;
-
 public abstract class Facility {
     private String serviceName;
     private double area;
-    private double rentCost;
-    private short personNumber;
-    private String rentType;
+    private double roomRate;
+    private int personNumber;
+    private String rentType;   //thuê theo năm, tháng, ngày, giờ.
 
     public Facility() {
-
     }
 
-    public Facility(String serviceName, double area, double rentCost, short personNumber, String rentType) {
+    public Facility(String serviceName, double area, double roomRate, int personNumber, String rentType) {
         this.serviceName = serviceName;
         this.area = area;
-        this.rentCost = rentCost;
+        this.roomRate = roomRate;
         this.personNumber = personNumber;
         this.rentType = rentType;
     }
@@ -33,23 +30,23 @@ public abstract class Facility {
         return area;
     }
 
-    public void setArea(float area) {
+    public void setArea(double area) {
         this.area = area;
     }
 
-    public double getRentCost() {
-        return rentCost;
+    public double getRoomRate() {
+        return roomRate;
     }
 
-    public void setRentCost(double rentCost) {
-        this.rentCost = rentCost;
+    public void setRoomRate(double rentCost) {
+        this.roomRate = rentCost;
     }
 
-    public short getPersonNumber() {
+    public int getPersonNumber() {
         return personNumber;
     }
 
-    public void setPersonNumber(short personNumber) {
+    public void setPersonNumber(int personNumber) {
         this.personNumber = personNumber;
     }
 
@@ -65,7 +62,7 @@ public abstract class Facility {
     public String toString() {
         return this.getServiceName() + "," +
                 this.getArea() + "," +
-                this.getRentCost() + "," +
+                this.getRoomRate() + "," +
                 this.getPersonNumber() + "," +
                 this.getRentType();
     }

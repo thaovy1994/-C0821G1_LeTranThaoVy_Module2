@@ -1,66 +1,104 @@
 package case_study.utils;
 
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 public class Validation {
     static Scanner input = new Scanner(System.in);
 
-    public static boolean checkGender() {
-        boolean check;
-        String gender = input.nextLine();
-        if (gender.equalsIgnoreCase("female")) {
-            check = false;
-        } else if (gender.equalsIgnoreCase("male")) {
-            check = true;
-        } else {
-            System.out.println("Enter again: ");
-            return checkGender();
+                        //class Person
+    public static String checkDateOfBirth() {
+        String dateOfBirth = input.nextLine();
+        while (!Pattern.matches("^([0-9]{2})\\/([0-9]{2})\\/([0-9]{4})$", dateOfBirth)) {
+            System.out.print("Wrong format, please enter again: ");
+            dateOfBirth = input.nextLine();
         }
-        return check;
+        return dateOfBirth;
     }
 
-    public static String checkEmployeeLevel() {
+    public static String checkServiceName() {
+        String serviceName = input.nextLine();
+        while (!Pattern.matches("^[A-Z]+[a-z]+$", serviceName)) {
+            System.out.print("Wrong format, please enter again: ");
+            serviceName = input.nextLine();
+        }
+        return serviceName;
+    }
+
+
+    public static String checkGender() {
         while (true) {
-            String level = input.nextLine();
-            if (level.equalsIgnoreCase("intermediate")
-                    || level.equalsIgnoreCase("associate")
-                    || level.equalsIgnoreCase("college")
-                    || level.equalsIgnoreCase("postgraduate")) {
-                return level;
-            } else {
+            String gender = input.nextLine();
+            if (gender.equalsIgnoreCase("male")
+                    || gender.equalsIgnoreCase("female")){
+                return gender;
+            }else {
                 System.out.print("Wrong ! Please enter again: ");
             }
         }
     }
 
-    public static String checkEmployeeposition() {
+    public static String checkPhoneNumber() {
+        String phone = input.nextLine();
+        while (!Pattern.matches("^[0]+[0-9]{9}$", phone)) {
+            System.out.println("Phone is number with 10 characters");
+            phone = input.nextLine();
+        }
+        return phone;
+    }
+
+    public static String checkEmail() {
+        String email = input.nextLine();
+        while (!Pattern.matches("^[\\w_]+\\@([\\w]+\\.)+[\\w]+[\\w]$", email)) {
+            System.out.print("Wrong format, please enter again: ");
+            email = input.nextLine();
+        }
+        return email;
+    }
+
+                        //class Facility
+    public static Double checkArea() {
+        double area;
+        do {
+            area = Double.parseDouble(input.nextLine());
+        } while (area < 30);
+        return area;
+    }
+
+    public static Double checkRoomRate() {
+        double roomrate;
+        do {
+            roomrate = Double.parseDouble(input.nextLine());
+        } while (roomrate < 0);
+        return roomrate;
+    }
+
+    public static int checkPersonNumber() {
+        int personNumber;
+        do {
+            personNumber = Integer.parseInt(input.nextLine());
+        } while (personNumber < 0 || personNumber > 20);
+        return personNumber;
+    }
+
+    public static byte checkFloorNumber() {
         while (true) {
-            String position = input.nextLine();
-            if (position.equalsIgnoreCase("Receptionist")
-                    || position.equalsIgnoreCase("Service staff")
-                    || position.equalsIgnoreCase("Senior")
-                    || position.equalsIgnoreCase("Supervisor")
-                    || position.equalsIgnoreCase("Manager")
-                    || position.equalsIgnoreCase("GM")) {
-                return position;
-            } else {
-                System.out.print("Wrong ! Please enter again: ");
+            byte floorNumber = Byte.parseByte(input.nextLine());
+            if (floorNumber > 0) {
+                return floorNumber;
+            }else{
+                System.out.print("Enter again: ");
             }
         }
     }
 
-    public static String checkCustomerType() {
-        while (true) {
-            String customerType = input.nextLine();
-            if (customerType.equalsIgnoreCase("Member")
-                    || customerType.equalsIgnoreCase("Silver")
-                    || customerType.equalsIgnoreCase("Gold")
-                    || customerType.equalsIgnoreCase("Platinium")
-                    || customerType.equalsIgnoreCase("Diamond")) {
-                return customerType;
-            } else {
-                System.out.print("Wrong ! Please enter again: ");
-            }
+                        //class Booking
+    public static String checkId() {
+        String id = input.nextLine();
+        while (!Pattern.matches("^[SV]{1}[VL]|[HO]|[RO]+\\-[0-9]{4}$", id)) {
+            System.out.print("Wrong format, please enter again: ");
+            id = input.nextLine();
         }
+        return id;
     }
 }

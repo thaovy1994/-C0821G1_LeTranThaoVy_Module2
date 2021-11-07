@@ -1,10 +1,10 @@
 package case_study.models;
 
-public class Person {
+public class Person<T> {
     private String id;
     private String fullName;
     private String dateOfBirth;
-    private boolean male = true;
+    private String gender;
     private int identifyNumber;
     private String phoneNumber;
     private String email;
@@ -12,11 +12,11 @@ public class Person {
     public Person() {
     }
 
-    public Person(String id, String fullName, String dateOfBirth, boolean male, int identifyNumber, String phoneNumber, String email) {
+    public Person(String id, String fullName, String dateOfBirth, String gender, int identifyNumber, String phoneNumber, String email) {
         this.id = id;
         this.fullName = fullName;
         this.dateOfBirth = dateOfBirth;
-        this.male = male;
+        this.gender = gender;
         this.identifyNumber = identifyNumber;
         this.phoneNumber = phoneNumber;
         this.email = email;
@@ -46,12 +46,12 @@ public class Person {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public boolean isMale() {
-        return male;
+    public String getGender() {
+        return gender;
     }
 
-    public void setMale(boolean male) {
-        this.male = male;
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
     public int getIdentifyNumber() {
@@ -83,7 +83,7 @@ public class Person {
         return this.getId() + "," +
                 this.getFullName() + "," +
                 this.getDateOfBirth() + "," +
-                this.isMale() + "," +
+                this.getGender() + "," +
                 this.getIdentifyNumber() + "," +
                 this.getPhoneNumber() + "," +
                 this.getEmail();
